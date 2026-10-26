@@ -1,0 +1,17 @@
+=== refkmers start n1166 Thu Oct 22 18:25:19 PDT 2026 ===
+-rw-r--r--. 1 mhuang matteop 176M Oct 22 18:34 /u/scratch/m/mhuang/claude/scKAR/data/ref/gencode.v50.transcripts.fa.gz
+#!/bin/sh
+
+# Argument takes the genome.fa.gz file and the output file path
+
+gunzip -c $1 | jellyfish count -m 31 -s 2G -t 8 -o $1.jf /dev/fd/0
+jellyfish dump $1.jf > $1.fa
+
+awk '!/^>/' $1.fa | LC_ALL=C sort -S 20G -T $TMPDIR > $2
+generator exit 0
+-rw-r--r--. 1 mhuang matteop 6.5G Oct 22 18:42 /u/scratch/m/mhuang/claude/scKAR/data/ref_31mers.txt
+ref 31-mers: 215142544
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC
+sorted order OK (C collation)
+=== refkmers done Thu Oct 22 18:43:56 PDT 2026 ===
