@@ -1,0 +1,9 @@
+"cluster","celltype","Freq"
+"0","T cells",1248
+"1","CD14 Mono",1192
+"2","B naive",924
+"3","rRNA artifact",842
+"4","rRNA artifact",527
+"5","NK",438
+"6","CD16 Mono",269
+"7","Low quality (high MT)",91

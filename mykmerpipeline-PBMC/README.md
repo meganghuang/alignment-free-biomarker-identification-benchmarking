@@ -22,6 +22,25 @@ prevalence floor of 1% of cells selects abundant transcripts, abundant transcrip
 mature spliced mRNA, and mature mRNA is exonic by construction. Intronic and intergenic
 transcription is lower-abundance by nature and is removed before the markers are called.
 
+## Upstream clustering figures (`results/clustering/`)
+
+The 8-cluster Seurat run these contigs derive from (job 15231823; `min_frac = 0.01`
+matrix, 474,583 k-mers x 5,531 cells after `min.features = 100`):
+
+| File | Content |
+|---|---|
+| `umap_cluster.pdf/.png` | UMAP coloured by Louvain cluster (resolution 0.2) |
+| `umap_celltype.pdf/.png` | the same UMAP with the annotations from `metadata/annotation.csv` |
+| `umap_general_celltype.png` | collapsed labels (T / Monocyte / B / NK / Artifact) |
+| `umap_origin.pdf` | UMAP coloured by lane of origin |
+| `quality_by_cluster.pdf`, `quality_by_origin.pdf` | nCount/nFeature QC violins. `percent.mito` is absent by construction: row names are k-mers, so `^MT-` never matches |
+| `dotplot_cluster_markers.pdf/.png` | top marker k-mers per cluster, labelled by sequence |
+| `top_markers_per_cluster.csv`, `cluster_gene_summary.csv` | marker k-mers with the genes they align to |
+| `cells_per_celltype.csv` | cell counts per annotated type |
+
+Clusters 3 and 4 are rRNA/TSO artifact and cluster 7 is high-mitochondrial; all three are
+excluded from every claim in this report.
+
 ## What was done
 
 ### 1. Contig assembly (`assemble_contigs.py`)
