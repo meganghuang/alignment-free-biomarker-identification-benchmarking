@@ -1,0 +1,93 @@
+=== job 15359623 on n1063 started Fri Oct 30 02:03:26 PDT 2026 ===
+python: /u/local/apps/anaconda3/2020.11/bin/python3
+numpy 1.19.2 | scipy 1.5.2
+  -> wrote /u/scratch/m/mhuang/claude/contigs/cluster0_contigs.fasta
+cluster 1 r>=0.5: 1,040 contigs (684 multi-kmer), max 827 bp, edges 16,628/16,637 passed
+cluster 1 r>=0.7: 989 contigs (658 multi-kmer), max 1572 bp, edges 16,523/16,637 passed
+cluster 1 r>=0.8: 928 contigs (627 multi-kmer), max 1595 bp, edges 16,277/16,637 passed
+cluster 1 r>=0.9: 1,196 contigs (654 multi-kmer), max 1595 bp, edges 15,789/16,637 passed
+  -> wrote /u/scratch/m/mhuang/claude/contigs/cluster1_contigs.fasta
+cluster 2 r>=0.5: 319 contigs (240 multi-kmer), max 571 bp, edges 27,398/27,403 passed
+cluster 2 r>=0.7: 319 contigs (240 multi-kmer), max 571 bp, edges 27,398/27,403 passed
+cluster 2 r>=0.8: 317 contigs (238 multi-kmer), max 571 bp, edges 27,396/27,403 passed
+cluster 2 r>=0.9: 320 contigs (239 multi-kmer), max 571 bp, edges 27,376/27,403 passed
+  -> wrote /u/scratch/m/mhuang/claude/contigs/cluster2_contigs.fasta
+cluster 3 r>=0.5: 657 contigs (257 multi-kmer), max 554 bp, edges 7,286/7,327 passed
+cluster 3 r>=0.7: 638 contigs (246 multi-kmer), max 628 bp, edges 7,105/7,327 passed
+cluster 3 r>=0.8: 657 contigs (211 multi-kmer), max 1023 bp, edges 6,921/7,327 passed
+cluster 3 r>=0.9: 708 contigs (189 multi-kmer), max 1051 bp, edges 6,709/7,327 passed
+  -> wrote /u/scratch/m/mhuang/claude/contigs/cluster3_contigs.fasta
+cluster 4 r>=0.5: 841 contigs (387 multi-kmer), max 849 bp, edges 7,989/8,052 passed
+cluster 4 r>=0.7: 836 contigs (367 multi-kmer), max 725 bp, edges 7,790/8,052 passed
+cluster 4 r>=0.8: 841 contigs (342 multi-kmer), max 725 bp, edges 7,610/8,052 passed
+cluster 4 r>=0.9: 917 contigs (325 multi-kmer), max 727 bp, edges 7,352/8,052 passed
+  -> wrote /u/scratch/m/mhuang/claude/contigs/cluster4_contigs.fasta
+cluster 5 r>=0.5: 251 contigs (205 multi-kmer), max 324 bp, edges 9,983/9,988 passed
+cluster 5 r>=0.7: 253 contigs (207 multi-kmer), max 324 bp, edges 9,979/9,988 passed
+cluster 5 r>=0.8: 247 contigs (200 multi-kmer), max 365 bp, edges 9,961/9,988 passed
+cluster 5 r>=0.9: 275 contigs (212 multi-kmer), max 324 bp, edges 9,901/9,988 passed
+  -> wrote /u/scratch/m/mhuang/claude/contigs/cluster5_contigs.fasta
+cluster 6 r>=0.5: 398 contigs (286 multi-kmer), max 841 bp, edges 21,922/21,925 passed
+cluster 6 r>=0.7: 406 contigs (289 multi-kmer), max 839 bp, edges 21,908/21,925 passed
+cluster 6 r>=0.8: 417 contigs (292 multi-kmer), max 839 bp, edges 21,889/21,925 passed
+cluster 6 r>=0.9: 447 contigs (300 multi-kmer), max 838 bp, edges 21,837/21,925 passed
+  -> wrote /u/scratch/m/mhuang/claude/contigs/cluster6_contigs.fasta
+cluster 7 r>=0.5: 382 contigs (165 multi-kmer), max 535 bp, edges 4,597/4,636 passed
+cluster 7 r>=0.7: 402 contigs (134 multi-kmer), max 908 bp, edges 4,466/4,636 passed
+cluster 7 r>=0.8: 418 contigs (124 multi-kmer), max 1444 bp, edges 4,389/4,636 passed
+cluster 7 r>=0.9: 454 contigs (109 multi-kmer), max 908 bp, edges 4,321/4,636 passed
+  -> wrote /u/scratch/m/mhuang/claude/contigs/cluster7_contigs.fasta
+
+=== ASSEMBLY SUMMARY (r >= 0.80) ===
+cluster 0: 35,752 k-mers -> 337 contigs (274 multi-k-mer, 179 >=56bp), max 761 bp, collapsed 35,415
+cluster 1: 16,852 k-mers -> 928 contigs (627 multi-k-mer, 76 >=56bp), max 1595 bp, collapsed 15,924
+cluster 2: 27,620 k-mers -> 317 contigs (238 multi-k-mer, 149 >=56bp), max 571 bp, collapsed 27,303
+cluster 3: 7,317 k-mers -> 657 contigs (211 multi-k-mer, 21 >=56bp), max 1023 bp, collapsed 6,660
+cluster 4: 8,148 k-mers -> 841 contigs (342 multi-k-mer, 29 >=56bp), max 725 bp, collapsed 7,307
+cluster 5: 10,166 k-mers -> 247 contigs (200 multi-k-mer, 86 >=56bp), max 365 bp, collapsed 9,919
+cluster 6: 22,274 k-mers -> 417 contigs (292 multi-k-mer, 139 >=56bp), max 839 bp, collapsed 21,857
+cluster 7: 4,745 k-mers -> 418 contigs (124 multi-k-mer, 19 >=56bp), max 1444 bp, collapsed 4,327
+ASSEMBLY_DONE
+	Command being timed: "/u/local/apps/anaconda3/2020.11/bin/python3 /u/scratch/m/mhuang/claude/assemble_contigs.py"
+	User time (seconds): 564.77
+	System time (seconds): 25.86
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 9:51.46
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 21326368
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 29581117
+	Voluntary context switches: 716
+	Involuntary context switches: 64514
+	Swaps: 0
+	File system inputs: 7685992
+	File system outputs: 764256
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+=== exit=0 Fri Oct 30 02:13:19 PDT 2026 ===
+total 374M
+-rw-r--r--. 1 mhuang matteop 6.2K Oct 30 02:13 assembly_summary.json
+-rw-r--r--. 1 mhuang matteop  52K Oct 30 02:11 cluster0_contigs.fasta
+-rw-r--r--. 1 mhuang matteop 1.1M Oct 30 02:11 cluster0_contigs.tsv
+-rw-r--r--. 1 mhuang matteop  62K Oct 30 02:11 cluster1_contigs.fasta
+-rw-r--r--. 1 mhuang matteop 550K Oct 30 02:11 cluster1_contigs.tsv
+-rw-r--r--. 1 mhuang matteop  43K Oct 30 02:12 cluster2_contigs.fasta
+-rw-r--r--. 1 mhuang matteop 829K Oct 30 02:12 cluster2_contigs.tsv
+-rw-r--r--. 1 mhuang matteop  39K Oct 30 02:12 cluster3_contigs.fasta
+-rw-r--r--. 1 mhuang matteop 254K Oct 30 02:12 cluster3_contigs.tsv
+-rw-r--r--. 1 mhuang matteop  49K Oct 30 02:12 cluster4_contigs.fasta
+-rw-r--r--. 1 mhuang matteop 289K Oct 30 02:12 cluster4_contigs.tsv
+-rw-r--r--. 1 mhuang matteop  22K Oct 30 02:12 cluster5_contigs.fasta
+-rw-r--r--. 1 mhuang matteop 313K Oct 30 02:12 cluster5_contigs.tsv
+-rw-r--r--. 1 mhuang matteop  42K Oct 30 02:13 cluster6_contigs.fasta
+-rw-r--r--. 1 mhuang matteop 678K Oct 30 02:13 cluster6_contigs.tsv
+-rw-r--r--. 1 mhuang matteop  25K Oct 30 02:13 cluster7_contigs.fasta
+-rw-r--r--. 1 mhuang matteop 164K Oct 30 02:13 cluster7_contigs.tsv
+-rw-r--r--. 1 mhuang matteop 369M Oct 30 02:10 marker_matrix.npz

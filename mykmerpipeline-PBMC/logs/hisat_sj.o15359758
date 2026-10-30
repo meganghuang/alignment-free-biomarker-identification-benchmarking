@@ -1,0 +1,39 @@
+=== job 15359758 on n1144 started Fri Oct 30 03:29:09 PDT 2026 ===
+subsampling every 3rd read from 5k_Human_Donor4_PBMC_3p_gem-x_GEX_S4_L001_R2_001.fastq Fri Oct 30 03:29:10 PDT 2026
+subsample reads: 17186615
+=== hisat2 Fri Oct 30 03:31:25 PDT 2026 ===
+	Major (requiring I/O) page faults: 34
+	Minor (reclaiming a frame) page faults: 20229548
+	Voluntary context switches: 128153
+	Involuntary context switches: 264012
+	Swaps: 0
+	File system inputs: 8794056
+	File system outputs: 18826224
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+hisat2 exit=0 Fri Oct 30 03:34:17 PDT 2026
+17186615 reads; of these:
+  17186615 (100.00%) were unpaired; of these:
+    1639603 (9.54%) aligned 0 times
+    11882199 (69.14%) aligned exactly 1 time
+    3664813 (21.32%) aligned >1 times
+90.46% overall alignment rate
+[bam_sort_core] merging from 2 files and 4 in-memory blocks...
+=== junction counts from N-CIGAR operations Fri Oct 30 03:37:04 PDT 2026 ===
+aligned reads scanned: 28,233,333; distinct junctions observed: 158,663
+annotated: n=431, supported(>=3 reads)=430, median=3046, max=22855
+novel: n=7, supported(>=3 reads)=0, median=0, max=0
+
+novel junctions in detail:
+  chr11:39965769-39965824 cluster 4 motif AC-GA intron 55 bp -> 0 reads
+  chr3:63912449-63912640 cluster 3 motif GG-GC intron 191 bp -> 0 reads
+  chr9:19201040-19380189 cluster 0 motif CT-AC intron 179149 bp -> 0 reads
+  chrUn_GL000220v1:116586-116853 cluster 3 motif AC-CA intron 267 bp -> 0 reads
+  chrUn_GL000220v1:116586-116853 cluster 4 motif AC-CA intron 267 bp -> 0 reads
+  chrX:125180153-125180173 cluster 3 motif GG-GG intron 20 bp -> 0 reads
+  chrX:125180184-125180206 cluster 3 motif AA-TG intron 22 bp -> 0 reads
+SJ_SUPPORT_DONE
+=== done Fri Oct 30 03:37:28 PDT 2026 ===

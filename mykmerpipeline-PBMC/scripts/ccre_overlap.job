@@ -1,0 +1,89 @@
+#!/bin/bash
+#$ -cwd
+#$ -N ccre_overlap
+#$ -o /u/scratch/m/mhuang/claude/logs/
+#$ -j y
+#$ -l h_rt=2:00:00,h_data=8G
+#$ -pe shared 4
+
+echo "=== job $JOB_ID on $(hostname) started $(date) ==="
+BASE=/u/scratch/m/mhuang/claude
+REF=$BASE/ref/screen_v4
+OUT=$BASE/ccre
+BT=/u/home/m/mhuang/bedtools2/bin/bedtools
+mkdir -p "$OUT"
+. /u/local/Modules/default/init/modules.sh
+module load anaconda3
+
+echo "############ cell-type-matched cCRE sets from the ENCODE portal ############"
+python3 - <<'PY'
+import json, urllib.request, os
+# One representative cCRE annotation per cluster cell type. Accessions are stated so the
+# mapping is auditable rather than implicit.
+mapping = {
+    "T cells":   ("ENCSR214CZY", "T-cell"),
+    "CD14 Mono": ("ENCSR175WWO", "CD14-positive monocyte"),
+    "B naive":   (None,          "B cell"),
+    "NK":        ("ENCSR454KCR", "natural killer cell"),
+    "CD16 Mono": (None,          "CD14-positive monocyte (proxy; no CD16-specific set selected)"),
+}
+# resolve B cell at query time
+import urllib.parse
+q = {"type":"Annotation","annotation_type":"candidate Cis-Regulatory Elements",
+     "assembly":"GRCh38","format":"json","limit":"3","biosample_ontology.term_name":"B cell"}
+try:
+    d = json.load(urllib.request.urlopen("https://www.encodeproject.org/search/?" + urllib.parse.urlencode(q), timeout=60))
+    hits = d.get("@graph", [])
+    print("B cell annotations:", d.get("total"), [h["accession"] for h in hits])
+    if hits: mapping["B naive"] = (hits[0]["accession"], "B cell")
+except Exception as e:
+    print("B cell query failed:", e)
+
+os.makedirs("/u/scratch/m/mhuang/claude/ref/screen_v4/biosample", exist_ok=True)
+for label, (acc, term) in mapping.items():
+    if not acc:
+        print(f"{label}: no accession resolved"); continue
+    try:
+        d = json.load(urllib.request.urlopen(f"https://www.encodeproject.org/annotations/{acc}/?format=json", timeout=60))
+        beds = [f for f in d.get("files", []) if f.get("file_format") == "bed"]
+        print(f"\n{label} <- {acc} ({term}): {len(beds)} bed file(s)")
+        for f in beds[:3]:
+            print("   ", f.get("accession"), f.get("output_type"), f.get("href"))
+        if beds:
+            href = "https://www.encodeproject.org" + beds[0]["href"]
+            dest = f"/u/scratch/m/mhuang/claude/ref/screen_v4/biosample/{label.replace(' ','_')}.bed.gz"
+            urllib.request.urlretrieve(href, dest)
+            print("    downloaded ->", dest, os.path.getsize(dest), "bytes")
+    except Exception as e:
+        print(f"{label}: FAILED {type(e).__name__} {e}")
+PY
+
+echo
+echo "############ contig blocks -> cCRE intersection ############"
+cat "$BASE/placement/contig_blocks.bed" "$BASE/placement/rescue_blocks.bed" \
+  | sort -k1,1 -k2,2n > "$OUT/all_blocks.bed"
+echo "blocks: $(wc -l < "$OUT/all_blocks.bed")"
+
+echo "--- full SCREEN V4 registry, typed ---"
+$BT intersect -a "$OUT/all_blocks.bed" -b "$REF/GRCh38-cCREs.bed" -wa -wb > "$OUT/overlap_full.tsv"
+echo "overlapping block-cCRE pairs: $(wc -l < "$OUT/overlap_full.tsv")"
+echo "contigs with >=1 cCRE overlap: $(cut -f4 "$OUT/overlap_full.tsv" | sort -u | wc -l)"
+echo "--- by cCRE type ---"
+awk -F'\t' '{print $12}' "$OUT/overlap_full.tsv" | sort | uniq -c | sort -rn
+
+echo
+echo "--- per cluster x cCRE type (distinct contigs) ---"
+awk -F'\t' '{split($4,a,"_"); print a[1]"\t"$12"\t"$4}' "$OUT/overlap_full.tsv" \
+  | sort -u | awk -F'\t' '{c[$1"\t"$2]++} END {for (k in c) print k"\t"c[k]}' | sort
+
+echo
+echo "--- cell-type-restricted ---"
+for f in "$REF"/biosample/*.bed.gz; do
+    [ -e "$f" ] || continue
+    n=$(basename "$f" .bed.gz)
+    zcat "$f" | sort -k1,1 -k2,2n > "$OUT/${n}.sorted.bed"
+    hits=$($BT intersect -a "$OUT/all_blocks.bed" -b "$OUT/${n}.sorted.bed" -wa -wb | cut -f4 | sort -u | wc -l)
+    echo "  $n: $(wc -l < "$OUT/${n}.sorted.bed") elements, $hits contigs overlapping"
+done
+echo "=== done $(date) ==="
+ls -lh "$OUT" | head -15

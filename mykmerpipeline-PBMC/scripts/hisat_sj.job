@@ -1,0 +1,89 @@
+#!/bin/bash
+#$ -cwd
+#$ -N hisat_sj
+#$ -o /u/scratch/m/mhuang/claude/logs/
+#$ -j y
+#$ -l h_rt=12:00:00,h_data=8G
+#$ -pe shared 12
+
+echo "=== job $JOB_ID on $(hostname) started $(date) ==="
+BASE=/u/scratch/m/mhuang/claude
+IDX=$BASE/ref/hisat2/GRCh38_noalt
+OUT=$BASE/junctions
+FQ=/u/scratch/m/mhuang/scripts/fastq
+export PATH="/u/home/m/mhuang/local/bin:$PATH"
+. /u/local/Modules/default/init/modules.sh
+module load hisat2
+mkdir -p "$OUT"
+
+# 10x 3' GEX: R1 is 28 bp of barcode+UMI, R2 is the cDNA -> align R2 single-end.
+# Strided subsample of lane 1 (every 3rd read) rather than head, so the sample is not
+# confined to the first tiles of the flowcell. Declared sample size, not the full library.
+R2=$FQ/5k_Human_Donor4_PBMC_3p_gem-x_GEX_S4_L001_R2_001.fastq
+SUB=$OUT/sub_R2.fastq
+echo "subsampling every 3rd read from $(basename $R2) $(date)"
+awk 'NR%4==1{i++} (i%3==0)' "$R2" > "$SUB"
+echo "subsample reads: $(( $(wc -l < "$SUB") / 4 ))"
+
+echo "=== hisat2 $(date) ==="
+/usr/bin/time -v hisat2 -p "$NSLOTS" -x "$IDX" -U "$SUB" \
+    --novel-splicesite-outfile "$OUT/novel_splicesites.txt" \
+    --summary-file "$OUT/hisat2_summary.txt" \
+    -S "$OUT/sub.sam" 2>&1 | tail -12
+echo "hisat2 exit=${PIPESTATUS[0]} $(date)"
+cat "$OUT/hisat2_summary.txt"
+
+samtools view -@ 4 -bS "$OUT/sub.sam" | samtools sort -@ 4 -o "$OUT/sub.sorted.bam" -
+samtools index "$OUT/sub.sorted.bam"
+rm -f "$OUT/sub.sam" "$SUB"
+
+echo "=== junction counts from N-CIGAR operations $(date) ==="
+/u/home/m/mhuang/.conda/envs/htseq_env/bin/python - <<'PY'
+import pysam, collections, csv
+bam = pysam.AlignmentFile("/u/scratch/m/mhuang/claude/junctions/sub.sorted.bam", "rb")
+jc = collections.Counter()
+n = 0
+for a in bam:
+    if a.is_unmapped or a.cigartuples is None:
+        continue
+    n += 1
+    pos = a.reference_start
+    for op, ln in a.cigartuples:
+        if op in (0, 2, 7, 8):      # M D = X consume reference
+            pos += ln
+        elif op == 3:               # N = skipped region = junction
+            jc[(a.reference_name, pos, pos + ln)] += 1
+            pos += ln
+print(f"aligned reads scanned: {n:,}; distinct junctions observed: {len(jc):,}", flush=True)
+with open("/u/scratch/m/mhuang/claude/junctions/read_junctions.tsv", "w") as fh:
+    fh.write("chrom\tdonor_end\tacceptor_start\tn_reads\n")
+    for (c, s, e), v in sorted(jc.items(), key=lambda x: -x[1]):
+        fh.write(f"{c}\t{s}\t{e}\t{v}\n")
+
+# cross-reference the contig-defined junctions
+sup = []
+with open("/u/scratch/m/mhuang/claude/junctions/contig_junctions.tsv") as f:
+    rd = csv.DictReader(f, delimiter="\t")
+    for row in rd:
+        key = (row["chrom"], int(row["donor_end"]), int(row["acceptor_start"]))
+        row["read_support"] = jc.get(key, 0)
+        sup.append(row)
+if sup:
+    cols = list(sup[0].keys())
+    with open("/u/scratch/m/mhuang/claude/junctions/contig_junctions_supported.tsv", "w") as fh:
+        w = csv.DictWriter(fh, fieldnames=cols, delimiter="\t"); w.writeheader(); w.writerows(sup)
+    import statistics
+    ann = [r for r in sup if r["status"] == "annotated"]
+    nov = [r for r in sup if r["status"] == "novel"]
+    for name, grp in (("annotated", ann), ("novel", nov)):
+        if grp:
+            s = [r["read_support"] for r in grp]
+            print(f"{name}: n={len(grp)}, supported(>=3 reads)={sum(1 for x in s if x>=3)}, "
+                  f"median={statistics.median(s)}, max={max(s)}", flush=True)
+    print("\nnovel junctions in detail:", flush=True)
+    for r in nov:
+        print(f"  {r['chrom']}:{r['donor_end']}-{r['acceptor_start']} cluster {r['cluster']} "
+              f"motif {r['motif']} intron {r['intron_len']} bp -> {r['read_support']} reads", flush=True)
+print("SJ_SUPPORT_DONE", flush=True)
+PY
+echo "=== done $(date) ==="

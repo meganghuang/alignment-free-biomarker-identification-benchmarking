@@ -1,0 +1,126 @@
+#!/bin/bash
+#$ -cwd
+#$ -N seurat5_r44
+#$ -o /u/scratch/m/mhuang/claude/logs/
+#$ -j y
+#$ -l h_rt=8:00:00,h_data=4G
+#$ -pe shared 8
+
+echo "=== job $JOB_ID on $(hostname) started $(date) ==="
+
+BASE=/u/scratch/m/mhuang/claude
+OLD=$BASE/envs/seurat5
+ENVDIR=$BASE/envs/seurat5_r44
+
+. /u/local/apps/anaconda3/2020.11/etc/profile.d/conda.sh
+export CONDA_CHANNEL_PRIORITY=strict
+export CONDA_PKGS_DIRS=$BASE/conda_pkgs
+export R_LIBS_USER=""
+export R_LIBS=""
+
+echo "=== conda create, r-base pinned to 4.4 (RStudio 2022.07.2 needs R < 4.5.0) $(date) ==="
+conda create --prefix "$ENVDIR" -y -c conda-forge \
+    "r-base=4.4" \
+    "r-seurat>=5.0.0" \
+    r-seuratobject r-sf r-matrix r-plyr r-patchwork r-ggplot2 \
+    r-devtools r-remotes r-biocmanager r-hdf5r \
+    2>&1 | tail -25
+echo "conda create exit=${PIPESTATUS[0]} $(date)"
+[ -x "$ENVDIR/bin/R" ] || { echo "FATAL: no R in new env"; exit 1; }
+
+echo "=== versions ==="
+"$ENVDIR/bin/Rscript" -e 'cat("R:", R.version.string, "\n"); for (p in c("Seurat","SeuratObject","Matrix","sf","plyr","patchwork","ggplot2","devtools","remotes")) cat(sprintf("  %-13s %s\n", p, tryCatch(as.character(packageVersion(p)), error=function(e) "MISSING")))' 2>&1 | grep -v R_HOME
+
+echo "=== SeuratData + SeuratWrappers via git clone (github.com HTTPS, not the API) $(date) ==="
+SRC=$BASE/pkgsrc/github
+mkdir -p "$SRC"; cd "$SRC" || exit 1
+for repo in seurat-data seurat-wrappers; do
+    rm -rf "$repo"
+    echo "--- cloning $repo"
+    if git clone --depth 1 "https://github.com/satijalab/${repo}.git" 2>&1 | tail -3; then
+        echo "--- installing $repo"
+        R_LIBS_USER="" "$ENVDIR/bin/R" CMD INSTALL "$repo" 2>&1 | tail -8
+        echo "   install exit=$?"
+    else
+        echo "   CLONE FAILED for $repo"
+    fi
+done
+cd "$BASE" || exit 1
+
+echo "=== SMOKE TEST $(date) ==="
+"$ENVDIR/bin/Rscript" -e '
+suppressMessages({library(Matrix); library(Seurat)})
+cat("R", getRversion(), "| Seurat", as.character(packageVersion("Seurat")),
+    "| SeuratObject", as.character(packageVersion("SeuratObject")),
+    "| Matrix", as.character(packageVersion("Matrix")), "\n")
+for (p in c("SeuratData","SeuratWrappers")) {
+  v <- tryCatch({ suppressMessages(library(p, character.only=TRUE)); as.character(packageVersion(p)) },
+                error=function(e) paste("MISSING:", conditionMessage(e)))
+  cat(sprintf("  %-15s %s\n", p, v))
+}
+set.seed(1)
+m <- matrix(rpois(400*120, 3), nrow=400)
+rownames(m) <- paste0("k",1:400); colnames(m) <- paste0("c",1:120)
+o <- CreateSeuratObject(counts=as(m,"dgCMatrix"))
+o <- NormalizeData(o, verbose=FALSE); o <- FindVariableFeatures(o, nfeatures=200, verbose=FALSE)
+o <- ScaleData(o, verbose=FALSE)
+o <- RunPCA(o, npcs=10, verbose=FALSE);          cat("PCA_OK\n")
+o <- FindNeighbors(o, dims=1:5, verbose=FALSE);  cat("NEIGHBORS_OK\n")
+o <- FindClusters(o, resolution=0.8, verbose=FALSE); cat("CLUSTER_OK\n")
+o <- RunUMAP(o, dims=1:5, verbose=FALSE);        cat("UMAP_OK\n")
+cat("R44_SMOKE_PASSED\n")
+' 2>&1 | grep -vE "R_HOME|^Warning|reticulate" | tail -20
+
+if "$ENVDIR/bin/Rscript" -e 'quit(status = if (packageVersion("Seurat") >= "5.0.0") 0 else 1)' 2>/dev/null; then
+    echo "=== repointing modulefile at the R 4.4 env ==="
+    MF=$BASE/modulefiles
+    cat > "$MF/Rstudio-seurat5" <<'MODFILE'
+#%Module1.0
+##
+## Rstudio-seurat5 : the system RStudio IDE, pointed at the Seurat 5 conda env.
+## Reverting: `module unload Rstudio-seurat5` (or `module unuse` this tree).
+## Nothing outside /u/scratch/m/mhuang/claude is modified by this file.
+## Stock baseline for reference: Rstudio/2022.07.2 does `module load R` (-> R/4.2.2),
+## prepends /u/local/apps/Rstudio/2022.07.2/bin to PATH, sets Rstudio_DIR, Rstudio_BIN
+## and QMLSCENE_DEVICE, and leaves RSTUDIO_WHICH_R unset.
+##
+proc ModulesHelp { } {
+    puts stderr "RStudio running R 4.4 with Seurat 5 from"
+    puts stderr "/u/scratch/m/mhuang/claude/envs/seurat5_r44"
+    puts stderr "R is pinned below 4.5.0 because Rstudio/2022.07.2 requires that."
+    puts stderr "Unload this module to return to the stock R/4.2.2 stack."
+}
+module-whatis "RStudio pointed at the Seurat 5 conda environment (R 4.4, Seurat 5)"
+
+set SEURAT5 /u/scratch/m/mhuang/claude/envs/seurat5_r44
+
+if { ![is-loaded Rstudio] } {
+    module load Rstudio
+}
+
+# RStudio consults RSTUDIO_WHICH_R when choosing which R to launch.
+setenv RSTUDIO_WHICH_R $SEURAT5/bin/R
+# The system R module exports an R_HOME for 4.2.2; point it at this env instead,
+# otherwise the conda R prints "ignoring environment value of R_HOME".
+setenv R_HOME          $SEURAT5/lib/R
+setenv R_LIBS_USER     $SEURAT5/lib/R/library
+prepend-path PATH      $SEURAT5/bin
+MODFILE
+    echo "--- verifying ---"
+    . /u/local/Modules/default/init/modules.sh
+    module use "$MF"; module load Rstudio-seurat5
+    echo "RSTUDIO_WHICH_R : ${RSTUDIO_WHICH_R:-<unset>}"
+    echo -n "R version       : "; R --version 2>/dev/null | head -1
+    echo -n "Seurat          : "; Rscript -e 'cat(as.character(packageVersion("Seurat")))' 2>/dev/null | tail -1; echo
+    echo "rstudio binary  : $(command -v rstudio || echo NOT_ON_PATH)"
+    module unload Rstudio-seurat5
+    echo "after unload, R  : $(command -v R || echo NOT_ON_PATH)"
+
+    echo "=== removing the superseded R 4.5.3 env (new env passed its smoke test) ==="
+    du -sh "$OLD" 2>/dev/null && rm -rf "$OLD" && echo "removed $OLD"
+else
+    echo "NOT repointing the modulefile and NOT removing the old env: new env failed its check"
+fi
+
+echo "=== sizes ==="; du -sh "$BASE/envs"/* 2>/dev/null
+echo "=== done $(date) ==="

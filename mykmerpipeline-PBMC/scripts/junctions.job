@@ -1,0 +1,39 @@
+#!/bin/bash
+#$ -cwd
+#$ -N junctions
+#$ -o /u/scratch/m/mhuang/claude/logs/
+#$ -j y
+#$ -l h_rt=3:00:00,h_data=8G
+#$ -pe shared 4
+
+echo "=== job $JOB_ID on $(hostname) started $(date) ==="
+BASE=/u/scratch/m/mhuang/claude
+GDIR=/u/scratch/m/mhuang/genomes/GRCh38
+export PATH="/u/home/m/mhuang/.local/bin:/u/home/m/mhuang/local/bin:$PATH"
+. /u/local/Modules/default/init/modules.sh
+module load anaconda3
+
+echo "############ how near-reference are the still-unplaced contigs? ############"
+# exact matching left 1,732 unplaced; allow up to 2 mismatches to see how many are
+# near-reference (SNP / sequencing error) versus genuinely absent from GRCh38
+python3 - <<'PY'
+placed = set()
+for line in open("/u/scratch/m/mhuang/claude/placement/rescue_blocks.bed"):
+    placed.add(line.split("\t")[3])
+keep, n = False, 0
+out = open("/u/scratch/m/mhuang/claude/placement/still_unplaced.fasta", "w")
+for line in open("/u/scratch/m/mhuang/claude/placement/unplaced.fasta"):
+    if line.startswith(">"):
+        keep = line[1:].strip() not in placed
+        n += keep
+    if keep: out.write(line)
+out.close(); print("still unplaced:", n)
+PY
+bowtie -f -S -v 2 -p "$NSLOTS" -k 1 --best \
+    -x "$GDIR/GCA_000001405.15_GRCh38_no_alt_analysis_set" \
+    "$BASE/placement/still_unplaced.fasta" /dev/null 2>&1 | tail -5
+
+echo
+echo "############ junctions from spliced contig placements ############"
+python3 $BASE/junctions.py 2>&1 | tail -40
+echo "=== done $(date) ==="

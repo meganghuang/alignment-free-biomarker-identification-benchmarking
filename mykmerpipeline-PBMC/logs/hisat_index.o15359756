@@ -1,0 +1,27 @@
+=== job 15359756 on n1145 started Fri Oct 30 03:14:28 PDT 2026 ===
+/u/local/apps/hisat2/gcc4.8.5/2.2.1/hisat2-2.2.1/hisat2-build
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7171428
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 7
+	Minor (reclaiming a frame) page faults: 30527540
+	Voluntary context switches: 1536337
+	Involuntary context switches: 125995
+	Swaps: 0
+	File system inputs: 16487712
+	File system outputs: 31694224
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+exit=0 Fri Oct 30 03:28:10 PDT 2026
+total 4.2G
+-rw-r--r--. 1 mhuang matteop 938M Oct 30 03:24 GRCh38_noalt.1.ht2
+-rw-r--r--. 1 mhuang matteop 700M Oct 30 03:24 GRCh38_noalt.2.ht2
+-rw-r--r--. 1 mhuang matteop  11K Oct 30 03:15 GRCh38_noalt.3.ht2
+-rw-r--r--. 1 mhuang matteop 700M Oct 30 03:15 GRCh38_noalt.4.ht2
+-rw-r--r--. 1 mhuang matteop 1.3G Oct 30 03:28 GRCh38_noalt.5.ht2
+-rw-r--r--. 1 mhuang matteop 713M Oct 30 03:28 GRCh38_noalt.6.ht2
+-rw-r--r--. 1 mhuang matteop   12 Oct 30 03:15 GRCh38_noalt.7.ht2
+-rw-r--r--. 1 mhuang matteop    8 Oct 30 03:15 GRCh38_noalt.8.ht2

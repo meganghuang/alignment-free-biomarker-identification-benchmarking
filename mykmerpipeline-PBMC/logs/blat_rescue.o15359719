@@ -1,0 +1,34 @@
+=== job 15359719 on n1143 started Fri Oct 30 02:48:18 PDT 2026 ===
+unplaced contigs written: 2618
+length distribution of unplaced contigs:
+     28 bp:   1563 (59.7%)
+     29-40:    809 (30.9%)
+     41-55:    193 (7.4%)
+    56-100:     40 (1.5%)
+      >100:     13 (0.5%)
+=== bowtie exact placement of unplaced contigs Fri Oct 30 02:48:18 PDT 2026 ===
+# reads processed: 2618
+# reads with at least one alignment: 886 (33.84%)
+# reads that failed to align: 1732 (66.16%)
+Reported 12535461 alignments
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+=== rescued placements -> BED + categories Fri Oct 30 02:50:03 PDT 2026 ===
+rescued contigs: 886
+  exons overlaps: 151 contigs
+  introns overlaps: 480 contigs
+  genes overlaps: 629 contigs
+=== done Fri Oct 30 02:50:16 PDT 2026 ===
+total 184M
+-rw-r--r--. 1 mhuang matteop 331K Oct 30 02:32 all_contigs.fasta
+-rw-r--r--. 1 mhuang matteop 2.6M Oct 30 02:33 all_contigs.psl
+-rw-r--r--. 1 mhuang matteop  453 Oct 30 02:33 category_counts.json
+-rw-r--r--. 1 mhuang matteop 133K Oct 30 02:33 contig_annotation.tsv
+-rw-r--r--. 1 mhuang matteop 102K Oct 30 02:33 contig_blocks.bed
+-rw-r--r--. 1 mhuang matteop  52K Oct 30 02:33 contigs_unplaced.txt
+-rw-r--r--. 1 mhuang matteop  41K Oct 30 02:50 rescue_blocks.bed
+-rw-r--r--. 1 mhuang matteop 6.4K Oct 30 02:50 rescue_exons.txt
+-rw-r--r--. 1 mhuang matteop  27K Oct 30 02:50 rescue_genes.txt
+-rw-r--r--. 1 mhuang matteop  20K Oct 30 02:50 rescue_introns.txt
+-rw-r--r--. 1 mhuang matteop 139K Oct 30 02:48 unplaced.fasta
+-rw-r--r--. 1 mhuang matteop 176M Oct 30 02:49 unplaced.sorted.bam
+-rw-r--r--. 1 mhuang matteop 4.8M Oct 30 02:50 unplaced.sorted.bam.bai

@@ -1,0 +1,64 @@
+=== job 15359652 on n1970 started Fri Oct 30 02:15:03 PDT 2026 ===
+=== full SCREEN V4 registry (GRCh38) ===
+bytes: 129083055
+--- first 3 lines ---
+chr1	10033	10250	EH38D4327497	EH38E2776516	pELS
+chr1	10385	10713	EH38D4327498	EH38E2776517	pELS
+chr1	16097	16381	EH38D6144701	EH38E3951272	CA-CTCF
+--- columns in line 1: 6 ---
+--- chromosome naming ---
+chr1
+chr10
+chr11
+chr12
+chr13
+--- cCRE count and type breakdown (last column) ---
+2348854
+1469205 dELS
+ 249464 pELS
+ 245985 CA
+ 126034 CA-CTCF
+ 105286 TF
+  79246 CA-H3K4me3
+  47532 PLS
+  26102 CA-TF
+
+=== ENCODE portal: per-biosample cCRE annotation files for our cell types ===
+
+B cell: 22 annotation(s)
+    ENCSR589SMM | candidate regulatory elements for GRCh38 in B cell
+    ENCSR870PDJ | candidate regulatory elements for GRCh38 in B cell
+    ENCSR266CVB | candidate regulatory elements for GRCh38 in B cell
+
+CD14-positive monocyte: 31 annotation(s)
+    ENCSR033IQG | candidate regulatory elements for GRCh38 in CD14-positive monocyte
+    ENCSR360BFY | candidate regulatory elements for GRCh38 in CD14-positive monocyte (multiple scl
+    ENCSR175WWO | candidate regulatory elements for GRCh38 in CD14-positive monocyte
+
+natural killer cell: 15 annotation(s)
+    ENCSR042JIT | candidate regulatory elements for GRCh38 in natural killer cell (treated)
+    ENCSR202KQZ | candidate regulatory elements for GRCh38 in natural killer cell (treated)
+    ENCSR454KCR | candidate regulatory elements for GRCh38 in natural killer cell
+
+T-cell: 114 annotation(s)
+    ENCSR214CZY | candidate regulatory elements for GRCh38 in T-cell
+    ENCSR050GQN | candidate regulatory elements for GRCh38 in T-cell
+    ENCSR681SHF | candidate regulatory elements for GRCh38 in T-cell
+
+CD4-positive, alpha-beta T cell: 65 annotation(s)
+    ENCSR025CHZ | candidate regulatory elements for GRCh38 in CD4-positive, alpha-beta T cell
+    ENCSR422FHK | candidate regulatory elements for GRCh38 in CD4-positive, alpha-beta T cell
+    ENCSR164NUP | candidate regulatory elements for GRCh38 in CD4-positive, alpha-beta T cell (tre
+
+CD8-positive, alpha-beta T cell: 32 annotation(s)
+    ENCSR369QQM | candidate regulatory elements for GRCh38 in CD8-positive, alpha-beta T cell
+    ENCSR147OZW | candidate regulatory elements for GRCh38 in CD8-positive, alpha-beta T cell
+    ENCSR775LBD | candidate regulatory elements for GRCh38 in CD8-positive, alpha-beta T cell
+
+peripheral blood mononuclear cell: 12 annotation(s)
+    ENCSR230GVY | candidate regulatory elements for GRCh38 in peripheral blood mononuclear cell
+    ENCSR315GIO | candidate regulatory elements for GRCh38 in peripheral blood mononuclear cell
+    ENCSR947DWB | candidate regulatory elements for GRCh38 in peripheral blood mononuclear cell
+=== done Fri Oct 30 02:15:12 PDT 2026 ===
+total 124M
+-rw-r--r--. 1 mhuang matteop 124M Oct 30 02:15 GRCh38-cCREs.bed

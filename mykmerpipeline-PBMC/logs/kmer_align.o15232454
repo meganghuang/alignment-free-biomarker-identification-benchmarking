@@ -1,0 +1,90 @@
+=== job 15232454 on n1064 started Wed Oct 21 02:27:34 PDT 2026 ===
+/u/home/m/mhuang/.local/bin/bowtie
+/u/home/m/mhuang/local/bin/samtools
+=== STEP 3: marker CSVs -> FASTA (repo 3_csv_to_fasta.sh, unmodified) ===
+Processing /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/0_cluster_markers.csv
+Processing /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/1_cluster_markers.csv
+Processing /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/2_cluster_markers.csv
+Processing /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/3_cluster_markers.csv
+Processing /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/4_cluster_markers.csv
+Processing /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/5_cluster_markers.csv
+Processing /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/6_cluster_markers.csv
+Processing /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/7_cluster_markers.csv
+Done.
+-rw-r--r--. 1 mhuang matteop 2.1M Oct 21 02:27 /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/0_cluster_markers.fasta
+-rw-r--r--. 1 mhuang matteop 971K Oct 21 02:27 /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/1_cluster_markers.fasta
+-rw-r--r--. 1 mhuang matteop 1.6M Oct 21 02:27 /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/2_cluster_markers.fasta
+-rw-r--r--. 1 mhuang matteop 422K Oct 21 02:27 /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/3_cluster_markers.fasta
+-rw-r--r--. 1 mhuang matteop 472K Oct 21 02:27 /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/4_cluster_markers.fasta
+-rw-r--r--. 1 mhuang matteop 590K Oct 21 02:27 /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/5_cluster_markers.fasta
+-rw-r--r--. 1 mhuang matteop 1.3M Oct 21 02:27 /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/6_cluster_markers.fasta
+-rw-r--r--. 1 mhuang matteop 636K Oct 21 02:27 /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/7_cluster_markers.fasta
+total FASTA records: 139269
+=== STEP 4: bowtie -v 0 -a --best (exact matches, all alignments) Wed Oct 21 02:27:34 PDT 2026 ===
+--- 0_cluster_markers
+# reads processed: 35752
+# reads with at least one alignment: 33082 (92.53%)
+# reads that failed to align: 2670 (7.47%)
+Reported 274735 alignments
+--- 1_cluster_markers
+# reads processed: 16852
+# reads with at least one alignment: 15500 (91.98%)
+# reads that failed to align: 1352 (8.02%)
+Reported 45393515 alignments
+[bam_sort_core] merging from 10 files and 1 in-memory blocks...
+--- 2_cluster_markers
+# reads processed: 27620
+# reads with at least one alignment: 25165 (91.11%)
+# reads that failed to align: 2455 (8.89%)
+Reported 244243 alignments
+--- 3_cluster_markers
+# reads processed: 7317
+# reads with at least one alignment: 5306 (72.52%)
+# reads that failed to align: 2011 (27.48%)
+Reported 1683641 alignments
+--- 4_cluster_markers
+# reads processed: 8178
+# reads with at least one alignment: 6090 (74.47%)
+# reads that failed to align: 2088 (25.53%)
+Reported 29156911 alignments
+[bam_sort_core] merging from 6 files and 1 in-memory blocks...
+--- 5_cluster_markers
+# reads processed: 10238
+# reads with at least one alignment: 9357 (91.39%)
+# reads that failed to align: 881 (8.61%)
+Reported 1400436 alignments
+--- 6_cluster_markers
+# reads processed: 22274
+# reads with at least one alignment: 20577 (92.38%)
+# reads that failed to align: 1697 (7.62%)
+Reported 3123506 alignments
+--- 7_cluster_markers
+# reads processed: 11038
+# reads with at least one alignment: 9098 (82.42%)
+# reads that failed to align: 1940 (17.58%)
+Reported 38203083 alignments
+[bam_sort_core] merging from 8 files and 1 in-memory blocks...
+=== STEP 5: HTSeq position -> gene name (GTF loaded once) Wed Oct 21 02:43:31 PDT 2026 ===
+output dir: /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/geneIDs
+loading GTF ...
+GTF loaded: 61852 gene features
+cluster 0: 274735 alignments, 215291 overlapping a gene -> /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/geneIDs/0_cluster_geneID.csv
+cluster 1: 45393515 alignments, 29285191 overlapping a gene -> /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/geneIDs/1_cluster_geneID.csv
+cluster 2: 244243 alignments, 186101 overlapping a gene -> /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/geneIDs/2_cluster_geneID.csv
+cluster 3: 1683641 alignments, 982400 overlapping a gene -> /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/geneIDs/3_cluster_geneID.csv
+cluster 4: 29156911 alignments, 18600555 overlapping a gene -> /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/geneIDs/4_cluster_geneID.csv
+cluster 5: 1400436 alignments, 893355 overlapping a gene -> /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/geneIDs/5_cluster_geneID.csv
+cluster 6: 3123506 alignments, 2005353 overlapping a gene -> /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/geneIDs/6_cluster_geneID.csv
+cluster 7: 38203083 alignments, 24643092 overlapping a gene -> /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/geneIDs/7_cluster_geneID.csv
+DONE
+=== outputs Wed Oct 21 03:30:40 PDT 2026 ===
+total 7.0G
+-rw-r--r--. 1 mhuang matteop  18M Oct 21 02:45 0_cluster_geneID.csv
+-rw-r--r--. 1 mhuang matteop 2.7G Oct 21 03:02 1_cluster_geneID.csv
+-rw-r--r--. 1 mhuang matteop  16M Oct 21 03:02 2_cluster_geneID.csv
+-rw-r--r--. 1 mhuang matteop 101M Oct 21 03:03 3_cluster_geneID.csv
+-rw-r--r--. 1 mhuang matteop 1.7G Oct 21 03:14 4_cluster_geneID.csv
+-rw-r--r--. 1 mhuang matteop  84M Oct 21 03:14 5_cluster_geneID.csv
+-rw-r--r--. 1 mhuang matteop 187M Oct 21 03:16 6_cluster_geneID.csv
+-rw-r--r--. 1 mhuang matteop 2.3G Oct 21 03:30 7_cluster_geneID.csv
+=== done Wed Oct 21 03:30:40 PDT 2026 ===

@@ -1,0 +1,83 @@
+#!/bin/bash
+#$ -cwd
+#$ -N seurat5_env
+#$ -o /u/scratch/m/mhuang/claude/logs/
+#$ -j y
+#$ -l h_rt=8:00:00,h_data=4G
+#$ -pe shared 8
+
+echo "=== job $JOB_ID on $(hostname) started $(date) ==="
+
+ENVDIR=/u/scratch/m/mhuang/claude/envs/seurat5
+mkdir -p /u/scratch/m/mhuang/claude/envs
+
+. /u/local/apps/anaconda3/2020.11/etc/profile.d/conda.sh
+export CONDA_CHANNEL_PRIORITY=strict
+export CONDA_PKGS_DIRS=/u/scratch/m/mhuang/claude/conda_pkgs   # keep the package cache off $HOME
+# Keep the user's R 4.2.2 personal library out of the way entirely
+export R_LIBS_USER=""
+export R_LIBS=""
+
+echo "=== egress check from this compute node ==="
+curl -sS -o /dev/null -w "conda.anaconda.org %{http_code}\n" https://conda.anaconda.org/conda-forge/noarch/repodata.json
+curl -sS -o /dev/null -w "cloud.r-project.org %{http_code}\n" https://cloud.r-project.org/
+curl -sS -o /dev/null -w "api.github.com %{http_code}\n" https://api.github.com/
+
+echo "=== conda create (this is the long step) $(date) ==="
+conda create --prefix "$ENVDIR" -y -c conda-forge \
+    "r-base>=4.2" \
+    "r-seurat>=5.0.0" \
+    r-seuratobject \
+    r-sf \
+    r-matrix \
+    r-plyr \
+    r-patchwork \
+    r-ggplot2 \
+    r-devtools \
+    r-remotes \
+    r-biocmanager \
+    r-hdf5r \
+    2>&1 | tail -40
+echo "conda create exit=${PIPESTATUS[0]} $(date)"
+
+[ -x "$ENVDIR/bin/R" ] || { echo "FATAL: no R in env"; exit 1; }
+
+echo "=== installed versions ==="
+"$ENVDIR/bin/Rscript" -e 'for (p in c("Seurat","SeuratObject","Matrix","sf","plyr","patchwork","ggplot2","devtools","remotes")) cat(sprintf("  %-13s %s\n", p, tryCatch(as.character(packageVersion(p)), error=function(e) "MISSING"))); cat("R:", R.version.string, "\n")'
+
+echo "=== SeuratData + SeuratWrappers from GitHub $(date) ==="
+"$ENVDIR/bin/Rscript" -e '
+  options(repos = c(CRAN = "https://cloud.r-project.org"), timeout = 1200)
+  for (repo in c("satijalab/seurat-data", "satijalab/seurat-wrappers")) {
+    cat("\n--- installing", repo, "\n")
+    r <- tryCatch({ remotes::install_github(repo, upgrade = "never", quiet = FALSE); "ok" },
+                  error = function(e) paste("FAILED:", conditionMessage(e)))
+    cat(repo, "->", r, "\n")
+  }
+' 2>&1 | tail -40
+
+echo "=== SMOKE TEST: the pipeline calls that broke under the R modules ==="
+"$ENVDIR/bin/Rscript" -e '
+suppressMessages({library(Matrix); library(Seurat)})
+cat("Seurat", as.character(packageVersion("Seurat")),
+    "| SeuratObject", as.character(packageVersion("SeuratObject")),
+    "| Matrix", as.character(packageVersion("Matrix")), "\n")
+for (p in c("SeuratData","SeuratWrappers"))
+  cat(sprintf("  %-15s %s\n", p, tryCatch(as.character(packageVersion(p)), error=function(e) "MISSING")))
+set.seed(1)
+m <- matrix(rpois(400*120, 3), nrow = 400)
+rownames(m) <- paste0("k", 1:400); colnames(m) <- paste0("c", 1:120)
+o <- CreateSeuratObject(counts = as(m, "dgCMatrix"))
+o <- NormalizeData(o, verbose = FALSE)
+o <- FindVariableFeatures(o, nfeatures = 200, verbose = FALSE)
+o <- ScaleData(o, verbose = FALSE)
+o <- RunPCA(o, npcs = 10, verbose = FALSE);         cat("PCA_OK\n")
+o <- FindNeighbors(o, dims = 1:5, verbose = FALSE); cat("NEIGHBORS_OK\n")
+o <- FindClusters(o, resolution = 0.8, verbose = FALSE); cat("CLUSTER_OK\n")
+o <- RunUMAP(o, dims = 1:5, verbose = FALSE);       cat("UMAP_OK\n")
+cat("SEURAT5_SMOKE_PASSED\n")
+' 2>&1 | grep -vE "^(Warning|In addition)" | tail -25
+
+echo "=== env size ==="
+du -sh "$ENVDIR"
+echo "=== done $(date) ==="

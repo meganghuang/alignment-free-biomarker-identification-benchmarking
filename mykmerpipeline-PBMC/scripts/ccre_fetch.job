@@ -1,0 +1,48 @@
+#!/bin/bash
+#$ -cwd
+#$ -N ccre_fetch
+#$ -o /u/scratch/m/mhuang/claude/logs/
+#$ -j y
+#$ -l h_rt=1:00:00,h_data=4G
+#$ -pe shared 2
+
+echo "=== job $JOB_ID on $(hostname) started $(date) ==="
+REF=/u/scratch/m/mhuang/claude/ref/screen_v4
+mkdir -p "$REF"; cd "$REF" || exit 1
+
+echo "=== full SCREEN V4 registry (GRCh38) ==="
+curl -sS -L -o GRCh38-cCREs.bed https://downloads.wenglab.org/Registry-V4/GRCh38-cCREs.bed
+echo "bytes: $(stat -c%s GRCh38-cCREs.bed)"
+echo "--- first 3 lines ---"; head -3 GRCh38-cCREs.bed
+echo "--- columns in line 1: $(head -1 GRCh38-cCREs.bed | awk '{print NF}') ---"
+echo "--- chromosome naming ---"; cut -f1 GRCh38-cCREs.bed | sort -u | head -5
+echo "--- cCRE count and type breakdown (last column) ---"
+wc -l < GRCh38-cCREs.bed
+awk -F'\t' '{print $NF}' GRCh38-cCREs.bed | sort | uniq -c | sort -rn | head -15
+
+echo
+echo "=== ENCODE portal: per-biosample cCRE annotation files for our cell types ==="
+. /u/local/Modules/default/init/modules.sh
+module load anaconda3
+python3 - <<'PY'
+import json, urllib.request, urllib.parse
+terms = ["B cell", "CD14-positive monocyte", "natural killer cell",
+         "T-cell", "CD4-positive, alpha-beta T cell", "CD8-positive, alpha-beta T cell",
+         "peripheral blood mononuclear cell"]
+base = "https://www.encodeproject.org/search/?"
+for t in terms:
+    q = dict(type="Annotation", annotation_type="candidate Cis-Regulatory Elements",
+             assembly="GRCh38", format="json", limit="5")
+    q["biosample_ontology.term_name"] = t
+    url = base + urllib.parse.urlencode(q)
+    try:
+        d = json.load(urllib.request.urlopen(url, timeout=60))
+        hits = d.get("@graph", [])
+        print(f"\n{t}: {d.get('total', 0)} annotation(s)")
+        for h in hits[:3]:
+            print("   ", h.get("accession"), "|", h.get("description", "")[:80])
+    except Exception as e:
+        print(f"\n{t}: QUERY FAILED {type(e).__name__} {e}")
+PY
+echo "=== done $(date) ==="
+ls -lh "$REF"

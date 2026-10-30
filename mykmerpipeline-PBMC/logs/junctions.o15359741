@@ -1,0 +1,25 @@
+=== job 15359741 on n1846 started Fri Oct 30 03:02:46 PDT 2026 ===
+############ how near-reference are the still-unplaced contigs? ############
+still unplaced: 1732
+# reads processed: 1732
+# reads with at least one alignment: 61 (3.52%)
+# reads that failed to align: 1671 (96.48%)
+Reported 61 alignments
+
+############ junctions from spliced contig placements ############
+contigs with a spliced best-placement: 256
+candidate junctions (both flanks >=8 bp, gap >=20 bp): 438
+building the GENCODE v41 junction set ...
+annotated junctions in GENCODE v41: 400,927
+
+=== junction classification (cluster, status, canonical motif) ===
+    c0  annotated  canonical=True  n=204
+    c0      novel  canonical=True  n=1
+    c1  annotated  canonical=True  n=11
+    c2  annotated  canonical=True  n=147
+    c3      novel  canonical=False  n=4
+    c4      novel  canonical=False  n=2
+    c5  annotated  canonical=True  n=16
+    c6  annotated  canonical=True  n=53
+JUNCTIONS_DONE
+=== done Fri Oct 30 03:03:03 PDT 2026 ===

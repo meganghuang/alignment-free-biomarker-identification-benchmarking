@@ -1,0 +1,67 @@
+#!/bin/bash
+#$ -cwd
+#$ -N blat_rescue
+#$ -o /u/scratch/m/mhuang/claude/logs/
+#$ -j y
+#$ -l h_rt=2:00:00,h_data=8G
+#$ -pe shared 8
+
+echo "=== job $JOB_ID on $(hostname) started $(date) ==="
+BASE=/u/scratch/m/mhuang/claude
+GDIR=/u/scratch/m/mhuang/genomes/GRCh38
+OUT=$BASE/placement
+export PATH="/u/home/m/mhuang/.local/bin:/u/home/m/mhuang/local/bin:$PATH"
+
+# BLAT needs two perfect 11-mer tiles to seed, so short contigs go unplaced.
+# Rescue them with exact bowtie matching (no splicing is possible at 28-55 bp anyway).
+. /u/local/Modules/default/init/modules.sh
+module load anaconda3
+python3 - <<'PY'
+ids = set(x.strip() for x in open("/u/scratch/m/mhuang/claude/placement/contigs_unplaced.txt") if x.strip())
+keep, out = False, open("/u/scratch/m/mhuang/claude/placement/unplaced.fasta", "w")
+n = 0
+for line in open("/u/scratch/m/mhuang/claude/placement/all_contigs.fasta"):
+    if line.startswith(">"):
+        keep = line[1:].strip() in ids
+        n += keep
+    if keep:
+        out.write(line)
+out.close()
+print(f"unplaced contigs written: {n}")
+import collections
+L = collections.Counter()
+seq = None
+for line in open("/u/scratch/m/mhuang/claude/placement/unplaced.fasta"):
+    if not line.startswith(">"):
+        L[len(line.strip())] += 1
+tot = sum(L.values())
+print("length distribution of unplaced contigs:")
+for b, lo, hi in [("28 bp", 28, 28), ("29-40", 29, 40), ("41-55", 41, 55), ("56-100", 56, 100), (">100", 101, 10**6)]:
+    k = sum(v for s, v in L.items() if lo <= s <= hi)
+    print(f"  {b:>8}: {k:>6} ({100*k/tot:.1f}%)")
+PY
+
+echo "=== bowtie exact placement of unplaced contigs $(date) ==="
+bowtie -f -S -v 0 -p "$NSLOTS" -a --best \
+    -x "$GDIR/GCA_000001405.15_GRCh38_no_alt_analysis_set" \
+    "$OUT/unplaced.fasta" "$OUT/unplaced.sam" 2>&1 | tail -6
+samtools view -Sb "$OUT/unplaced.sam" | samtools sort -o "$OUT/unplaced.sorted.bam" -
+samtools index "$OUT/unplaced.sorted.bam"
+rm -f "$OUT/unplaced.sam"
+
+echo "=== rescued placements -> BED + categories $(date) ==="
+samtools view "$OUT/unplaced.sorted.bam" | awk 'BEGIN{OFS="\t"}
+    $3!="*" { n[$1]++; if (!($1 in seen)) { seen[$1]=1; chrom[$1]=$3; pos[$1]=$4; l[$1]=length($10);
+              strand[$1]=and($2,16)?"-":"+" } }
+    END { for (q in seen) print chrom[q], pos[q]-1, pos[q]-1+l[q], q, n[q], strand[q] }' \
+    | sort -k1,1 -k2,2n > "$OUT/rescue_blocks.bed"
+echo "rescued contigs: $(wc -l < "$OUT/rescue_blocks.bed")"
+
+BT=/u/home/m/mhuang/bedtools2/bin/bedtools
+for ref in exons introns genes; do
+    $BT intersect -a "$OUT/rescue_blocks.bed" -b "$GDIR/${ref}.bed" -wa -wb \
+        | cut -f4,10 | sort -u > "$OUT/rescue_${ref}.txt"
+    echo "  $ref overlaps: $(cut -f1 "$OUT/rescue_${ref}.txt" | sort -u | wc -l) contigs"
+done
+echo "=== done $(date) ==="
+ls -lh "$OUT"

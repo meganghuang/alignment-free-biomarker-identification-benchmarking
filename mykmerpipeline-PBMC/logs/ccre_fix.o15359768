@@ -1,0 +1,108 @@
+=== job 15359768 on n6674 started Fri Oct 30 03:16:00 PDT 2026 ===
+############ find per-biosample cCRE files with FULL classification ############
+
+=== T cells (T-cell) ===
+  ENCSR214CZY/ENCFF855ORE: states=['High-H3K4me3', 'Unclassified']
+  ENCSR050GQN/ENCFF749DUW: states=['CA-only', 'Low-DNase']
+  -> SELECTED ENCSR050GQN/ENCFF749DUW; wrote /u/scratch/m/mhuang/claude/ref/screen_v4/biosample_full/T_cells.bed (2,348,854 classified elements)
+
+=== CD14 Mono (CD14-positive monocyte) ===
+  ENCSR033IQG/ENCFF900YFA: states=['High-H3K27ac', 'Unclassified']
+  ENCSR360BFY/ENCFF770GZP: states=['High-H3K27ac', 'High-H3K4me3', 'High-H3K4me3,High-H3K27ac', 'Unclassified']
+  -> SELECTED ENCSR360BFY/ENCFF770GZP; wrote /u/scratch/m/mhuang/claude/ref/screen_v4/biosample_full/CD14_Mono.bed (243,327 classified elements)
+
+=== B naive (B cell) ===
+  ENCSR589SMM/ENCFF707UAA: states=['High-CTCF', 'Unclassified']
+  ENCSR870PDJ/ENCFF876VEJ: states=['High-H3K4me3', 'Unclassified']
+  ENCSR266CVB/ENCFF655QWF: states=['CA-H3K4me3', 'CA-only', 'Low-DNase', 'PLS', 'dELS', 'pELS']
+  -> SELECTED ENCSR266CVB/ENCFF655QWF; wrote /u/scratch/m/mhuang/claude/ref/screen_v4/biosample_full/B_naive.bed (2,348,854 classified elements)
+
+=== NK (natural killer cell) ===
+  ENCSR042JIT/ENCFF986ERB: states=['High-H3K27ac', 'High-H3K4me3', 'High-H3K4me3,High-H3K27ac', 'Unclassified']
+  -> SELECTED ENCSR042JIT/ENCFF986ERB; wrote /u/scratch/m/mhuang/claude/ref/screen_v4/biosample_full/NK.bed (237,081 classified elements)
+
+############ cell-type-restricted intersection ############
+--- B_naive: 2348854 classified elements
+   c0	Low-DNase	175
+   c0	PLS	25
+   c0	pELS	24
+   c1	Low-DNase	124
+   c1	PLS	6
+   c1	pELS	7
+   c2	Low-DNase	167
+   c2	PLS	14
+   c2	dELS	4
+   c2	pELS	19
+   c3	Low-DNase	12
+   c3	PLS	4
+   c3	pELS	2
+   c4	Low-DNase	40
+   c4	PLS	4
+   c5	Low-DNase	112
+   c5	PLS	8
+   c5	dELS	2
+   c5	pELS	12
+   c6	Low-DNase	175
+   c6	PLS	7
+   c6	dELS	6
+   c6	pELS	23
+   c7	Low-DNase	2
+--- CD14_Mono: 243327 classified elements
+   c0	High-H3K27ac	5
+   c0	High-H3K4me3	11
+   c0	High-H3K4me3,High-H3K27ac	95
+   c1	High-H3K27ac	4
+   c1	High-H3K4me3	14
+   c1	High-H3K4me3,High-H3K27ac	41
+   c2	High-H3K27ac	13
+   c2	High-H3K4me3	8
+   c2	High-H3K4me3,High-H3K27ac	49
+   c3	High-H3K4me3	2
+   c3	High-H3K4me3,High-H3K27ac	8
+   c4	High-H3K4me3	5
+   c4	High-H3K4me3,High-H3K27ac	6
+   c5	High-H3K27ac	9
+   c5	High-H3K4me3	7
+   c5	High-H3K4me3,High-H3K27ac	59
+   c6	High-H3K27ac	23
+   c6	High-H3K4me3	15
+   c6	High-H3K4me3,High-H3K27ac	73
+   c7	High-H3K4me3,High-H3K27ac	1
+--- NK: 237081 classified elements
+   c0	High-H3K27ac	17
+   c0	High-H3K4me3	11
+   c0	High-H3K4me3,High-H3K27ac	150
+   c1	High-H3K27ac	4
+   c1	High-H3K4me3	9
+   c1	High-H3K4me3,High-H3K27ac	39
+   c2	High-H3K27ac	13
+   c2	High-H3K4me3	13
+   c2	High-H3K4me3,High-H3K27ac	92
+   c3	High-H3K4me3	3
+   c3	High-H3K4me3,High-H3K27ac	8
+   c4	High-H3K4me3	8
+   c4	High-H3K4me3,High-H3K27ac	4
+   c5	High-H3K27ac	9
+   c5	High-H3K4me3	1
+   c5	High-H3K4me3,High-H3K27ac	103
+   c6	High-H3K27ac	13
+   c6	High-H3K4me3	7
+   c6	High-H3K4me3,High-H3K27ac	93
+   c7	High-H3K4me3	1
+--- T_cells: 2348854 classified elements
+   c0	CA-only	60
+   c0	Low-DNase	160
+   c1	CA-only	18
+   c1	Low-DNase	117
+   c2	CA-only	29
+   c2	Low-DNase	174
+   c3	CA-only	5
+   c3	Low-DNase	12
+   c4	CA-only	5
+   c4	Low-DNase	39
+   c5	CA-only	37
+   c5	Low-DNase	93
+   c6	CA-only	41
+   c6	Low-DNase	168
+   c7	Low-DNase	2
+=== done Fri Oct 30 03:16:38 PDT 2026 ===

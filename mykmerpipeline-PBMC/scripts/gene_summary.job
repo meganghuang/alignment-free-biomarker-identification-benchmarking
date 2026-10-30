@@ -1,0 +1,12 @@
+#!/bin/bash
+#$ -cwd
+#$ -N gene_summary
+#$ -o /u/scratch/m/mhuang/claude/logs/
+#$ -j y
+#$ -hold_jid 15232454
+#$ -l h_rt=3:00:00,h_data=16G
+#$ -pe shared 4
+
+echo "=== job $JOB_ID on $(hostname) started $(date) ==="
+/u/home/m/mhuang/.conda/envs/htseq_env/bin/python /u/scratch/m/mhuang/claude/summarize_genes.py
+echo "=== done $(date) ==="

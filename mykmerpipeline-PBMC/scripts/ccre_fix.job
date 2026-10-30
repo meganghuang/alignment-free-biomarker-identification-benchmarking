@@ -1,0 +1,97 @@
+#!/bin/bash
+#$ -cwd
+#$ -N ccre_fix
+#$ -o /u/scratch/m/mhuang/claude/logs/
+#$ -j y
+#$ -l h_rt=2:00:00,h_data=8G
+#$ -pe shared 4
+
+echo "=== job $JOB_ID on $(hostname) started $(date) ==="
+BASE=/u/scratch/m/mhuang/claude
+OUT=$BASE/ccre
+BT=/u/home/m/mhuang/bedtools2/bin/bedtools
+. /u/local/Modules/default/init/modules.sh
+module load anaconda3
+
+echo "############ find per-biosample cCRE files with FULL classification ############"
+python3 - <<'PY'
+import json, urllib.request, urllib.parse, os, gzip, shutil
+want = {"T cells":"T-cell", "CD14 Mono":"CD14-positive monocyte",
+        "B naive":"B cell", "NK":"natural killer cell"}
+dest_dir = "/u/scratch/m/mhuang/claude/ref/screen_v4/biosample_full"
+os.makedirs(dest_dir, exist_ok=True)
+
+def annotations(term):
+    q = {"type":"Annotation","annotation_type":"candidate Cis-Regulatory Elements",
+         "assembly":"GRCh38","format":"json","limit":"40",
+         "biosample_ontology.term_name":term}
+    url = "https://www.encodeproject.org/search/?" + urllib.parse.urlencode(q)
+    return json.load(urllib.request.urlopen(url, timeout=90)).get("@graph", [])
+
+for label, term in want.items():
+    print(f"\n=== {label} ({term}) ===", flush=True)
+    picked = None
+    for a in annotations(term):
+        acc = a["accession"]
+        try:
+            d = json.load(urllib.request.urlopen(
+                f"https://www.encodeproject.org/annotations/{acc}/?format=json", timeout=90))
+        except Exception as e:
+            continue
+        # a fully-classified set names all five states in its description or has >1 bed
+        beds = [f for f in d.get("files", []) if f.get("file_format") == "bed"]
+        desc = (d.get("description") or "")
+        if not beds:
+            continue
+        # probe the first 2000 lines of each bed for the state vocabulary
+        for f in beds[:2]:
+            href = "https://www.encodeproject.org" + f["href"]
+            tmp = f"/tmp/probe_{f['accession']}.bed.gz"
+            try:
+                urllib.request.urlretrieve(href, tmp)
+                states = set()
+                with gzip.open(tmp, "rt") as fh:
+                    for i, line in enumerate(fh):
+                        c = line.rstrip("\n").split("\t")
+                        if len(c) >= 10:
+                            states.add(c[9])
+                        if i > 20000:
+                            break
+                informative = states - {"Unclassified"}
+                print(f"  {acc}/{f['accession']}: states={sorted(states)[:6]}", flush=True)
+                if len(informative) >= 2:
+                    picked = (acc, f["accession"], tmp, states)
+                    break
+            except Exception as e:
+                print(f"  {acc}/{f.get('accession')}: probe failed {e}", flush=True)
+            finally:
+                pass
+        if picked:
+            break
+    if picked:
+        acc, facc, tmp, states = picked
+        out = f"{dest_dir}/{label.replace(' ','_')}.bed"
+        with gzip.open(tmp, "rt") as fh, open(out, "w") as o:
+            for line in fh:
+                c = line.rstrip("\n").split("\t")
+                if len(c) >= 10 and c[9] != "Unclassified":
+                    o.write("\t".join(c[:4] + [c[9]]) + "\n")
+        print(f"  -> SELECTED {acc}/{facc}; wrote {out} "
+              f"({sum(1 for _ in open(out)):,} classified elements)", flush=True)
+    else:
+        print(f"  -> no fully-classified set found for {label}", flush=True)
+PY
+
+echo
+echo "############ cell-type-restricted intersection ############"
+D=$BASE/ref/screen_v4/biosample_full
+for f in "$D"/*.bed; do
+    [ -e "$f" ] || { echo "no classified biosample files"; break; }
+    n=$(basename "$f" .bed)
+    sort -k1,1 -k2,2n "$f" > "$OUT/${n}.cls.bed"
+    echo "--- $n: $(wc -l < "$OUT/${n}.cls.bed") classified elements"
+    $BT intersect -a "$OUT/all_blocks.bed" -b "$OUT/${n}.cls.bed" -wa -wb \
+      | awk -F'\t' '{split($4,a,"_"); print a[1]"\t"$11"\t"$4}' | sort -u \
+      | awk -F'\t' '{c[$1"\t"$2]++} END {for (k in c) print "   "k"\t"c[k]}' | sort
+done
+echo "=== done $(date) ==="

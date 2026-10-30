@@ -1,0 +1,31 @@
+#!/bin/bash
+#$ -cwd
+#$ -N blat_contigs
+#$ -o /u/scratch/m/mhuang/claude/logs/
+#$ -j y
+#$ -l h_rt=4:00:00,h_data=8G
+#$ -pe shared 4
+
+echo "=== job $JOB_ID on $(hostname) started $(date) ==="
+BASE=/u/scratch/m/mhuang/claude
+GDIR=/u/scratch/m/mhuang/genomes/GRCh38
+OUT=$BASE/placement
+BLAT=/u/home/m/mhuang/userApps/bin/blat
+mkdir -p "$OUT"
+
+cat $BASE/contigs/cluster*_contigs.fasta > "$OUT/all_contigs.fasta"
+echo "contigs: $(grep -c '^>' $OUT/all_contigs.fasta)"
+
+echo "=== BLAT vs GRCh38 no-alt analysis set $(date) ==="
+/usr/bin/time -v $BLAT "$GDIR/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta" \
+    "$OUT/all_contigs.fasta" "$OUT/all_contigs.psl" \
+    -t=dna -q=dna -minScore=25 -minIdentity=95 -noHead 2>&1 | tail -12
+echo "blat exit=${PIPESTATUS[0]} $(date)"
+wc -l < "$OUT/all_contigs.psl"
+
+echo "=== PSL -> annotation $(date) ==="
+. /u/local/Modules/default/init/modules.sh
+module load anaconda3
+python3 $BASE/psl_annotate.py "$OUT/all_contigs.psl" "$OUT" 2>&1 | tail -40
+echo "=== done $(date) ==="
+ls -lh "$OUT"

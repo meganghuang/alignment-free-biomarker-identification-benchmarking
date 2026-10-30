@@ -1,0 +1,22 @@
+#!/bin/bash
+#$ -cwd
+#$ -N asm_contigs
+#$ -o /u/scratch/m/mhuang/claude/logs/
+#$ -j y
+#$ -l h_rt=6:00:00,h_data=8G
+#$ -pe shared 8
+
+echo "=== job $JOB_ID on $(hostname) started $(date) ==="
+. /u/local/Modules/default/init/modules.sh
+module load anaconda3
+PY=$(command -v python3 || command -v python)
+echo "python: $PY"
+$PY -c "import numpy, scipy; print('numpy', numpy.__version__, '| scipy', scipy.__version__)" \
+  || { echo "falling back to htseq_env"; PY=/u/home/m/mhuang/.conda/envs/htseq_env/bin/python; \
+       $PY -c "import numpy, scipy; print('numpy', numpy.__version__, '| scipy', scipy.__version__)"; }
+
+export ASM_OUT=/u/scratch/m/mhuang/claude/contigs
+export ASM_R=0.8
+/usr/bin/time -v $PY /u/scratch/m/mhuang/claude/assemble_contigs.py 2>&1 | tail -70
+echo "=== exit=${PIPESTATUS[0]} $(date) ==="
+ls -lh $ASM_OUT 2>&1 | head -25

@@ -1,0 +1,40 @@
+#!/bin/bash
+#$ -cwd
+#$ -N kmer_seurat_c
+#$ -o /u/scratch/m/mhuang/claude/logs/
+#$ -j y
+#$ -l h_rt=8:00:00,h_data=8G
+#$ -pe shared 16
+
+set -o pipefail
+echo "=== job $JOB_ID on $(hostname) started $(date) ==="
+echo "slots=$NSLOTS"
+
+. /u/local/Modules/default/init/modules.sh
+module load apptainer
+SIF="$H2_CONTAINER_LOC/h2-rstudio_4.1.0.sif"
+ls -lh "$SIF" || exit 1
+
+RUN=/u/scratch/m/mhuang/claude/runs/${JOB_ID}_seurat
+TMPB=/u/scratch/m/mhuang/claude/tmp_cont_${JOB_ID}
+mkdir -p "$RUN/plots" "$TMPB" || exit 1
+cd "$RUN" || exit 1
+
+# The container's own .libPaths() lacks Seurat/harmony; they live in the user's
+# RStudio-container library, which must be passed in explicitly.
+USERLIB=/u/home/m/mhuang/R/APPTAINER/h2-rstudio_4.1.0
+
+echo "=== apptainer exec Rscript 02_seurat.R $(date) ==="
+/usr/bin/time -v apptainer exec \
+  -B "$TMPB":/tmp \
+  --env R_LIBS_USER="$USERLIB" \
+  --env KMER_DATA_DIR=/u/scratch/m/mhuang/scripts/bkc_counts \
+  --env KMER_PLOTS_DIR="$RUN/plots" \
+  "$SIF" Rscript /u/scratch/m/mhuang/claude/02_seurat.R 2>&1 | tail -250
+rc=${PIPESTATUS[0]}
+echo "=== Rscript exit=$rc $(date) ==="
+
+echo "=== outputs ==="
+ls -lhR "$RUN"
+rm -rf "$TMPB"
+exit $rc

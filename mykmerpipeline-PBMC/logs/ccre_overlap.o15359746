@@ -1,0 +1,91 @@
+=== job 15359746 on n7670 started Fri Oct 30 03:10:20 PDT 2026 ===
+############ cell-type-matched cCRE sets from the ENCODE portal ############
+B cell annotations: 22 ['ENCSR589SMM', 'ENCSR870PDJ', 'ENCSR266CVB']
+
+T cells <- ENCSR214CZY (T-cell): 1 bed file(s)
+    ENCFF855ORE candidate Cis-Regulatory Elements /files/ENCFF855ORE/@@download/ENCFF855ORE.bed.gz
+    downloaded -> /u/scratch/m/mhuang/claude/ref/screen_v4/biosample/T_cells.bed.gz 32616806 bytes
+
+CD14 Mono <- ENCSR175WWO (CD14-positive monocyte): 1 bed file(s)
+    ENCFF337RXV candidate Cis-Regulatory Elements /files/ENCFF337RXV/@@download/ENCFF337RXV.bed.gz
+    downloaded -> /u/scratch/m/mhuang/claude/ref/screen_v4/biosample/CD14_Mono.bed.gz 32767762 bytes
+
+B naive <- ENCSR589SMM (B cell): 1 bed file(s)
+    ENCFF707UAA candidate Cis-Regulatory Elements /files/ENCFF707UAA/@@download/ENCFF707UAA.bed.gz
+    downloaded -> /u/scratch/m/mhuang/claude/ref/screen_v4/biosample/B_naive.bed.gz 32630645 bytes
+
+NK <- ENCSR454KCR (natural killer cell): 1 bed file(s)
+    ENCFF925QYL candidate Cis-Regulatory Elements /files/ENCFF925QYL/@@download/ENCFF925QYL.bed.gz
+    downloaded -> /u/scratch/m/mhuang/claude/ref/screen_v4/biosample/NK.bed.gz 32807556 bytes
+CD16 Mono: no accession resolved
+
+############ contig blocks -> cCRE intersection ############
+blocks: 2943
+--- full SCREEN V4 registry, typed ---
+overlapping block-cCRE pairs: 1270
+contigs with >=1 cCRE overlap: 917
+--- by cCRE type ---
+    580 pELS
+    438 dELS
+    185 PLS
+     29 CA
+     21 TF
+      9 CA-CTCF
+      7 CA-H3K4me3
+      1 CA-TF
+
+--- per cluster x cCRE type (distinct contigs) ---
+c0	CA-CTCF	3
+c0	PLS	55
+c0	TF	3
+c0	dELS	63
+c0	pELS	127
+c1	CA	6
+c1	CA-CTCF	2
+c1	CA-H3K4me3	1
+c1	PLS	14
+c1	TF	11
+c1	dELS	51
+c1	pELS	54
+c2	CA	2
+c2	CA-CTCF	4
+c2	PLS	41
+c2	TF	2
+c2	dELS	79
+c2	pELS	100
+c3	CA	1
+c3	CA-H3K4me3	1
+c3	PLS	8
+c3	dELS	6
+c3	pELS	2
+c4	CA	4
+c4	CA-H3K4me3	3
+c4	PLS	6
+c4	dELS	24
+c4	pELS	7
+c5	PLS	19
+c5	TF	2
+c5	dELS	60
+c5	pELS	53
+c6	CA	11
+c6	CA-H3K4me3	2
+c6	CA-TF	1
+c6	PLS	18
+c6	TF	3
+c6	dELS	99
+c6	pELS	76
+c7	dELS	2
+
+--- cell-type-restricted ---
+  B_naive: 2348854 elements, 917 contigs overlapping
+  CD14_Mono: 2348854 elements, 917 contigs overlapping
+  NK: 2348854 elements, 917 contigs overlapping
+  T_cells: 2348854 elements, 917 contigs overlapping
+=== done Fri Oct 30 03:11:02 PDT 2026 ===
+total 1.1G
+-rw-r--r--. 1 mhuang matteop 270M Oct 30 03:10 B_naive.sorted.bed
+-rw-r--r--. 1 mhuang matteop 271M Oct 30 03:10 CD14_Mono.sorted.bed
+-rw-r--r--. 1 mhuang matteop 263M Oct 30 03:10 NK.sorted.bed
+-rw-r--r--. 1 mhuang matteop 270M Oct 30 03:10 T_cells.sorted.bed
+-rw-r--r--. 1 mhuang matteop 143K Oct 30 03:10 all_blocks.bed
+-rw-r--r--. 1 mhuang matteop 130K Oct 30 03:10 overlap_full.tsv

@@ -1,0 +1,44 @@
+=== job 15232862 on n7066 started Wed Oct 21 03:31:39 PDT 2026 ===
+
+=== cluster 0 ===
+  alignments 274,735 | k-mers 33,082 | well-placed (<= 10 loci) 30,643 (92.6%) | median loci/k-mer 2 | genes 12,489
+  top genes (all k-mers)   : EEF1A1(1247), STEAP1B(1228), EEF1A1P5(1026), EEF1A1P6(965), TPT1(800), DGKI(648), RPS6(646), C5orf34(617), ENSG00000249492(616), RPL13A(548)
+  top genes (well-placed)  : EEF1A1(908), STEAP1B(866), TPT1(800), EEF1A1P5(773), EEF1A1P6(723), RPS6(646), RPL13A(540), DGKI(508), RPL14(484), RPS8(459)
+
+=== cluster 1 ===
+  alignments 45,393,515 | k-mers 15,500 | well-placed (<= 10 loci) 11,575 (74.7%) | median loci/k-mer 2 | genes 32,532
+  top genes (all k-mers)   : RBFOX1(2985), CNTNAP2(2972), DIAPH2(2913), PRKN(2911), BCAS3(2880), DMD(2865), KAZN(2864), CASC15(2858), IL1RAPL1(2857), CTNNA3(2804)
+  top genes (well-placed)  : MALAT1(2411), ENSG00000280441(2183), TALAM1(2171), ENSG00000278996(2132), MT-CO1(995), ENSG00000230021(658), LYZ(576), MTCO1P12(547), FTH1(504), ENSG00000257764(424)
+
+=== cluster 2 ===
+  alignments 244,243 | k-mers 25,165 | well-placed (<= 10 loci) 23,266 (92.5%) | median loci/k-mer 2 | genes 12,296
+  top genes (all k-mers)   : EEF1A1(539), IGHM(513), CD74(497), STEAP1B(454), RPS8(451), PTMA(419), DGKI(406), RPL13AP5(379), RPL5(377), DIPK1A(366)
+  top genes (well-placed)  : IGHM(513), CD74(497), RPS8(451), PTMA(419), RPL13AP5(371), DTWD2(357), EZR(335), RPL5(333), RPS6(331), RPL13A(328)
+
+=== cluster 3 ===
+  alignments 1,683,641 | k-mers 5,306 | well-placed (<= 10 loci) 4,799 (90.4%) | median loci/k-mer 8 | genes 14,399
+  top genes (all k-mers)   : ENSG00000280441(4964), ENSG00000278996(4867), ENSG00000280614(802), ENSG00000280800(802), ENSG00000281181(802), ENSG00000281383(758), HFM1(349), SLCO5A1(273), ANKRD30BL(230), MALAT1(179)
+  top genes (well-placed)  : ENSG00000280441(4519), ENSG00000278996(4422), ENSG00000280614(647), ENSG00000280800(647), ENSG00000281181(647), ENSG00000281383(614), HFM1(311), MALAT1(179), TALAM1(179), SLCO5A1(140)
+
+=== cluster 4 ===
+  alignments 29,156,911 | k-mers 6,090 | well-placed (<= 10 loci) 4,686 (76.9%) | median loci/k-mer 8 | genes 31,932
+  top genes (all k-mers)   : ENSG00000280441(4141), ENSG00000278996(3947), MACROD2(1009), RYR2(1005), CSMD1(1004), RAD51B(1004), CTNNA3(1004), DLG2(1004), SOX2-OT(1003), CNTNAP2(1003)
+  top genes (well-placed)  : ENSG00000280441(3644), ENSG00000278996(3577), MT-RNR2(673), ENSG00000280614(655), ENSG00000280800(655), ENSG00000281181(655), ENSG00000281383(622), MT-RNR1(241), DHFR(237), HFM1(223)
+
+=== cluster 5 ===
+  alignments 1,400,436 | k-mers 9,357 | well-placed (<= 10 loci) 8,868 (94.8%) | median loci/k-mer 1 | genes 23,539
+  top genes (all k-mers)   : CCL5(594), ENSG00000270240(594), B2M(467), H1-3(436), GNLY(398), H1-4(359), CCSER1(342), STEAP1B(340), EEF1A1(338), H1-2(331)
+  top genes (well-placed)  : B2M(462), H1-3(436), CCL5(408), ENSG00000270240(408), GNLY(372), H1-4(359), H1-2(331), TMSB4X(312), HLA-B(296), ENSG00000288681(249)
+
+=== cluster 6 ===
+  alignments 3,123,506 | k-mers 20,577 | well-placed (<= 10 loci) 20,142 (97.9%) | median loci/k-mer 1 | genes 28,041
+  top genes (all k-mers)   : MT-CO1(986), CTSS(900), ENSG00000230021(850), FTH1(750), ACTB(576), ENSG00000236449(552), BEST1(550), MTCO1P12(535), PTMA(511), DTWD2(506)
+  top genes (well-placed)  : MT-CO1(986), ENSG00000230021(805), CTSS(804), FTH1(690), MTCO1P12(535), PTMA(511), ENSG00000236449(491), ENSG00000290018(491), ACTB(476), B2M(473)
+
+=== cluster 7 ===
+  alignments 38,203,083 | k-mers 9,098 | well-placed (<= 10 loci) 7,260 (79.8%) | median loci/k-mer 3 | genes 32,389
+  top genes (all k-mers)   : ENSG00000280441(2298), ENSG00000278996(2052), ENSG00000230021(1980), RBFOX1(1715), DMD(1715), CNTNAP2(1704), BCAS3(1699), KAZN(1697), PRKN(1693), DIAPH2(1691)
+  top genes (well-placed)  : ENSG00000280441(2029), ENSG00000278996(1941), MT-RNR2(1471), ENSG00000230021(900), MT-RNR1(803), DHFR(536), MT-CO3(412), MT-CO1(399), MT-ND4L(394), MT-ND4(333)
+
+wrote /u/scratch/m/mhuang/claude/runs/15231823_seurat/plots/geneIDs/gene_summary.json
+=== done Wed Oct 21 03:36:44 PDT 2026 ===

@@ -1,0 +1,45 @@
+#!/bin/bash
+#$ -cwd
+#$ -N kmer_align
+#$ -o /u/scratch/m/mhuang/claude/logs/
+#$ -j y
+#$ -l h_rt=4:00:00,h_data=8G
+#$ -pe shared 8
+
+set -o pipefail
+echo "=== job $JOB_ID on $(hostname) started $(date) ==="
+
+export PATH="/u/home/m/mhuang/.local/bin:/u/home/m/mhuang/local/bin:$PATH"
+command -v bowtie samtools || { echo "tools missing"; exit 1; }
+
+PLOTS=/u/scratch/m/mhuang/claude/runs/15231823_seurat/plots
+REF=/u/scratch/m/mhuang/genomes/GRCh38/GCA_000001405.15_GRCh38_no_alt_analysis_set
+OUT_DIR=$PLOTS/bam
+mkdir -p "$OUT_DIR"
+
+echo "=== STEP 3: marker CSVs -> FASTA (repo 3_csv_to_fasta.sh, unmodified) ==="
+bash /u/scratch/m/mhuang/claude/kmer-scRNAseq-pipeline/3_csv_to_fasta.sh "$PLOTS"
+ls -lh "$PLOTS"/*.fasta
+echo -n "total FASTA records: "; grep -hc '^>' "$PLOTS"/*.fasta | paste -sd+ | bc
+
+echo "=== STEP 4: bowtie -v 0 -a --best (exact matches, all alignments) $(date) ==="
+for fasta in "$PLOTS"/*_cluster_markers.fasta; do
+    [ -e "$fasta" ] || continue
+    fname=$(basename "$fasta" .fasta)
+    SAM="$OUT_DIR/${fname}.sam"
+    echo "--- $fname"
+    bowtie -f -S -v 0 -p "$NSLOTS" -a --best -x "$REF" "$fasta" "$SAM" 2>&1 | tail -6
+    samtools view -Sb "$SAM" > "$OUT_DIR/${fname}.bam"
+    samtools sort "$OUT_DIR/${fname}.bam" -o "$OUT_DIR/${fname}.sorted.bam"
+    samtools index "$OUT_DIR/${fname}.sorted.bam"
+    samtools view "$OUT_DIR/${fname}.sorted.bam" | awk '{print $1, $3, $4}' > "$OUT_DIR/${fname}.mapped_locations.txt"
+    rm -f "$SAM" "$OUT_DIR/${fname}.bam"
+done
+
+echo "=== STEP 5: HTSeq position -> gene name (GTF loaded once) $(date) ==="
+/u/home/m/mhuang/.conda/envs/htseq_env/bin/python \
+    /u/scratch/m/mhuang/claude/pos_to_gene_multi.py "$OUT_DIR"/*_cluster_markers.sorted.bam
+
+echo "=== outputs $(date) ==="
+ls -lh "$PLOTS/geneIDs" 2>&1 | head -15
+echo "=== done $(date) ==="

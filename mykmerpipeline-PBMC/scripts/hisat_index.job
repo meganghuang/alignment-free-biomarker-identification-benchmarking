@@ -1,0 +1,18 @@
+#!/bin/bash
+#$ -cwd
+#$ -N hisat_index
+#$ -o /u/scratch/m/mhuang/claude/logs/
+#$ -j y
+#$ -l h_rt=12:00:00,h_data=8G
+#$ -pe shared 8
+
+echo "=== job $JOB_ID on $(hostname) started $(date) ==="
+. /u/local/Modules/default/init/modules.sh
+module load hisat2
+command -v hisat2-build || exit 1
+IDX=/u/scratch/m/mhuang/claude/ref/hisat2
+mkdir -p "$IDX"
+GFA=/u/scratch/m/mhuang/genomes/GRCh38/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta
+/usr/bin/time -v hisat2-build -p "$NSLOTS" "$GFA" "$IDX/GRCh38_noalt" 2>&1 | tail -15
+echo "exit=${PIPESTATUS[0]} $(date)"
+ls -lh "$IDX"

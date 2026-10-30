@@ -1,0 +1,9 @@
+cluster,annotation,GeneralCellType
+0,T cells,T cells
+1,CD14 Mono,Monocytes
+2,B naive,B cells
+3,rRNA artifact,Artifact
+4,rRNA artifact,Artifact
+5,NK,NK
+6,CD16 Mono,Monocytes
+7,Low quality (high MT),Artifact
