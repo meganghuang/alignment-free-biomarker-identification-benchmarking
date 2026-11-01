@@ -1,0 +1,16 @@
+cluster,CellType,GeneralCellType,cells
+0,CD14 Mono,Monocytes,1065
+1,B naive,B cells,845
+2,CD4 TCM,T cells,814
+3,CD4 TCM,T cells,748
+4,CD16 Mono,Monocytes,415
+5,CD4 naive,T cells,385
+6,NK,NK,311
+7,CD8 TEM,T cells,298
+8,CD4 naive,T cells,227
+9,B memory,B cells,161
+10,cDC2,Dendritic cells,111
+11,NK8 TEM,T cells,109
+12,CD8 TCM,T cells,43
+13,pDC,Dendritic cells,31
+14,Platelet,Platelets,17

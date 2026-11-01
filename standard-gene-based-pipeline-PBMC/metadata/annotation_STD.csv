@@ -1,0 +1,16 @@
+Cluster,CellType,GeneralCellType
+0,CD14 Mono,Monocytes
+1,B naive,B cells
+2,CD4 TCM,T cells
+3,CD4 TCM,T cells
+4,CD16 Mono,Monocytes
+5,CD4 naive,T cells
+6,NK,NK
+7,CD8 TEM,T cells
+8,CD4 naive,T cells
+9,B memory,B cells
+10,cDC2,Dendritic cells
+11,NK8 TEM,T cells
+12,CD8 TCM,T cells
+13,pDC,Dendritic cells
+14,Platelet,Platelets
