@@ -1,0 +1,7 @@
+celltype,0,1,2
+B cells,0,0,10
+Dendritic cells,0,10,0
+Monocytes,0,10,0
+NK,10,0,0
+Platelets,2,0,0
+T cells,10,0,0

@@ -1,0 +1,58 @@
+=== scKAR PBMC run summary ===
+Thu Nov  5 03:48:19 PST 2026
+--- DE k-mers (DESeq2 padj<=0.05, |log2FC|>=1) ---
+A_kmers.tsv rows: 939036
+B_kmers.tsv rows: 387822
+A_kmers.fasta seqs: 939035
+B_kmers.fasta seqs: 387821
+filtered_kmers.tsv rows: 1326857
+--- ABySS contigs ---
+A_contigs count: 167
+A_contigs total bp: 10012
+A_contigs length stats:
+  n=167 min=27 median=56 max=252
+A_contigs_pvalues rows: 168
+A BLAT psl lines: 4843
+B_contigs count: 47
+B_contigs total bp: 2857
+B_contigs length stats:
+  n=47 min=27 median=53 max=165
+B_contigs_pvalues rows: 48
+B BLAT psl lines: 1698
+--- clustering ---
+leiden cluster sizes:
+     22 0
+     20 1
+     10 2
+bipartition sizes:
+     32 A
+     20 B
+--- adjacency ---
+adj chunks: 16
+f_test chunks: 51
+deseq tables: 50
+--- config ---
+INPUT_DIR="/u/scratch/m/mhuang/claude/compare3/sckar_pbmc/data/"
+REFERENCE_TRANSCRIPTOME_SORTED_31MERS_PATH="/u/scratch/m/mhuang/claude/compare3/sckar_pbmc/data/ref_31mers.txt"
+BLAT_PATH="/u/home/m/mhuang/userApps/bin/blat"
+NUMBER_OF_THREADS=4
+FILTER_REFERENCE_KMERS=true
+MODE="GENE_EXPRESSION"
+CLUSTERING_ALGO=leiden
+MIN_GENES=10
+MIN_CELLS=3
+N_NEIGHBORS=10
+N_PCS=20
+RESOLUTION=0.6
+MIN_ROW_THREDSHOLD=10
+PSEUDOBULK_SIZE=500000
+MIN_ROW_COUNT=10
+MIN_COL_COUNT=10
+LOG2FC=1.0
+PVAL=0.05
+BASE_MEAN_THRESHOLD=0.0
+PVAL_COMBINATION_METHOD=hmp
+--- head of contig pvalues ---
+contig	pvalue
+AGAAAGAAAGAAAGAAAGAAAGAAAGAAAG	1
+AAAAAAAAAAAAAAAAAAAAAAAAAAA	1

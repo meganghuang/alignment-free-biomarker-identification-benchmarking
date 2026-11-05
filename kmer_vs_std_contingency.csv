@@ -1,0 +1,6 @@
+kmer_general,B cells,Dendritic cells,Monocytes,NK,Platelets,T cells
+Artifact,79,33,108,91,0,1122
+B cells,914,6,4,0,0,0
+Monocytes,2,102,1342,0,0,11
+NK,0,0,1,202,11,224
+T cells,3,0,7,6,0,1229
