@@ -1,0 +1,7 @@
+,Standard,k-mer pipeline,scKAR
+T cells,2,1,0
+Monocytes,2,2,0
+B cells,2,2,2
+NK,2,1,0
+Dendritic cells,2,0,0
+Platelets,2,-1,0

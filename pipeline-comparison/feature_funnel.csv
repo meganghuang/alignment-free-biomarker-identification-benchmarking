@@ -1,0 +1,5 @@
+,Standard (genes),k-mer pipeline (28-mers),scKAR (31-mers)
+Tested for DE,29567.0,474583,2105134.0
+Significant,13941.0,89970,1326856.0
+Assembled contigs,,4162,214.0
+Placed on hg38,,2430,
