@@ -1,0 +1,31 @@
+=== build on n1156 Fri Nov 13 02:34:37 PST 2026 ===
+g++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
+--- ./create_adj_list ---
+OK ./create_adj_list
+--- ./ref_filter ---
+OK ./ref_filter
+--- ./adj_to_mat ---
+In file included from adj_to_mat.cpp:2:
+./f_oneway_test.cpp:5:10: fatal error: boost/math/distributions/fisher_f.hpp: No such file or directory
+    5 | #include <boost/math/distributions/fisher_f.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+FAILED ./adj_to_mat
+--- ./bh_correction ---
+/usr/bin/ld: /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+FAILED ./bh_correction
+--- ./f_oneway_test ---
+f_oneway_test.cpp:5:10: fatal error: boost/math/distributions/fisher_f.hpp: No such file or directory
+    5 | #include <boost/math/distributions/fisher_f.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+FAILED ./f_oneway_test
+--- ./merge_adj_for_clustering ---
+OK ./merge_adj_for_clustering
+=== built binaries ===
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/repo/src/clustering/merge_adj_for_clustering 52128
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/repo/src/f-test/f_test.out 12322152
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/repo/src/kmer-filtering/create_adj_list 55576
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/repo/src/kmer-filtering/ref_filter 53680

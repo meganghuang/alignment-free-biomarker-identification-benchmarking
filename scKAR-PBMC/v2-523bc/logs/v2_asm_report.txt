@@ -1,0 +1,366 @@
+=== host n7455 slots 8 start Mon Nov 16 11:41:42 PST 2026 ===
+[1] adjacency already done, skipping
+total 142330
+-rw-r--r--. 1 mhuang matteop 145745105 Nov 16 01:26 adj_0.filtered.csv
+[2] conditions already done, skipping
+clusters:
+    162 0
+    118 1
+     90 2
+     63 3
+     40 4
+     33 5
+     17 6
+      1 cluster
+bipartitions:
+5
+[3] F-test already done, skipping
+f_test chunks:
+6
+41M	/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/f_test_results
+[4] DESeq2 Mon Nov 16 11:41:43 PST 2026
+Running DESeq2 for bipartition_0.csv and f_test_result_6.csv
+
+  A   B 
+103 420 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+Error in read.table(file = file, header = header, sep = sep, quote = quote,  : 
+  no lines available in input
+Calls: read.csv -> read.table
+Execution halted
+merging deseq results
+merging file:  bipartition_0.csv_f_test_result_1.csv_gp.csv
+merging file:  bipartition_0.csv_f_test_result_2.csv_gp.csv
+merging file:  bipartition_0.csv_f_test_result_3.csv_gp.csv
+merging file:  bipartition_0.csv_f_test_result_4.csv_gp.csv
+merging file:  bipartition_0.csv_f_test_result_5.csv_gp.csv
+created filtered_kmers.tsv
+creating fasta files
+created A_kmers.fasta and B_kmers.fasta
+Running DESeq2 for bipartition_1.csv and f_test_result_6.csv
+
+  A   B 
+151 372 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+Error in read.table(file = file, header = header, sep = sep, quote = quote,  : 
+  no lines available in input
+Calls: read.csv -> read.table
+Execution halted
+merging deseq results
+merging file:  bipartition_1.csv_f_test_result_1.csv_gp.csv
+merging file:  bipartition_1.csv_f_test_result_2.csv_gp.csv
+merging file:  bipartition_1.csv_f_test_result_3.csv_gp.csv
+merging file:  bipartition_1.csv_f_test_result_4.csv_gp.csv
+merging file:  bipartition_1.csv_f_test_result_5.csv_gp.csv
+created filtered_kmers.tsv
+creating fasta files
+created A_kmers.fasta and B_kmers.fasta
+Running DESeq2 for bipartition_2.csv and f_test_result_6.csv
+
+  A   B 
+193 330 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+Error in read.table(file = file, header = header, sep = sep, quote = quote,  : 
+  no lines available in input
+Calls: read.csv -> read.table
+Execution halted
+merging deseq results
+merging file:  bipartition_2.csv_f_test_result_1.csv_gp.csv
+merging file:  bipartition_2.csv_f_test_result_2.csv_gp.csv
+merging file:  bipartition_2.csv_f_test_result_3.csv_gp.csv
+merging file:  bipartition_2.csv_f_test_result_4.csv_gp.csv
+merging file:  bipartition_2.csv_f_test_result_5.csv_gp.csv
+created filtered_kmers.tsv
+creating fasta files
+created A_kmers.fasta and B_kmers.fasta
+Running DESeq2 for bipartition_3.csv and f_test_result_6.csv
+
+  A   B 
+168 355 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+Error in read.table(file = file, header = header, sep = sep, quote = quote,  : 
+  no lines available in input
+Calls: read.csv -> read.table
+Execution halted
+merging deseq results
+merging file:  bipartition_3.csv_f_test_result_1.csv_gp.csv
+merging file:  bipartition_3.csv_f_test_result_2.csv_gp.csv
+merging file:  bipartition_3.csv_f_test_result_3.csv_gp.csv
+merging file:  bipartition_3.csv_f_test_result_4.csv_gp.csv
+merging file:  bipartition_3.csv_f_test_result_5.csv_gp.csv
+created filtered_kmers.tsv
+creating fasta files
+created A_kmers.fasta and B_kmers.fasta
+Running DESeq2 for bipartition_4.csv and f_test_result_6.csv
+
+  A   B 
+355 168 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+Error in read.table(file = file, header = header, sep = sep, quote = quote,  : 
+  no lines available in input
+Calls: read.csv -> read.table
+Execution halted
+merging deseq results
+merging file:  bipartition_4.csv_f_test_result_1.csv_gp.csv
+merging file:  bipartition_4.csv_f_test_result_2.csv_gp.csv
+merging file:  bipartition_4.csv_f_test_result_3.csv_gp.csv
+merging file:  bipartition_4.csv_f_test_result_4.csv_gp.csv
+merging file:  bipartition_4.csv_f_test_result_5.csv_gp.csv
+created filtered_kmers.tsv
+creating fasta files
+created A_kmers.fasta and B_kmers.fasta
+[4] exit 0 Mon Nov 16 11:42:54 PST 2026
+25
+[5] assembly Mon Nov 16 11:42:54 PST 2026
+blast9 flag is true
+-------------Merging kmers using abyss----------------
+contigs-0.fa:0: warning: file is empty
+snp-0.fa:0: warning: file is empty
+[n7455:886003] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n7455:886003] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+A-1.fa:0: warning: file is empty
+A-1.fa:0: warning: file is empty
+A-1.fa:0: warning: file is empty
+make: *** [/u/scratch/m/mhuang/claude/scKAR/envs/sckar_tools/bin/abyss-pe.Makefile:568: A-2.fa] Segmentation fault (core dumped)
+contigs-0.fa:0: warning: file is empty
+snp-0.fa:0: warning: file is empty
+[n7455:886043] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n7455:886043] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n7455:886043] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+B-1.fa:0: warning: file is empty
+B-1.fa:0: warning: file is empty
+B-1.fa:0: warning: file is empty
+make: *** [/u/scratch/m/mhuang/claude/scKAR/envs/sckar_tools/bin/abyss-pe.Makefile:568: B-2.fa] Segmentation fault (core dumped)
+cat: A-unitigs.fa: No such file or directory
+cat: B-unitigs.fa: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/abyss/A_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/abyss/B_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+Using Harmonic Mean P-value (HMP) method for merging p-values.
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/A_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/abyss/A_contigs_pvalues.tsv 
+Warning message:
+In fwrite(hmp_df, OUTPUT_FILE_HMP, sep = "\t", quote = FALSE) :
+  Input has no columns; creating an empty file at '/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/abyss/A_contigs_pvalues.tsv' and exiting.
+
+Results saved successfully!
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/B_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/abyss/B_contigs_pvalues.tsv 
+Warning message:
+In fwrite(hmp_df, OUTPUT_FILE_HMP, sep = "\t", quote = FALSE) :
+  Input has no columns; creating an empty file at '/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/abyss/B_contigs_pvalues.tsv' and exiting.
+
+Results saved successfully!
+blast9 flag is true
+-------------Merging kmers using abyss----------------
+contigs-0.fa:0: warning: file is empty
+snp-0.fa:0: warning: file is empty
+[n7455:886151] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+A-1.fa:0: warning: file is empty
+A-1.fa:0: warning: file is empty
+A-1.fa:0: warning: file is empty
+make: *** [/u/scratch/m/mhuang/claude/scKAR/envs/sckar_tools/bin/abyss-pe.Makefile:568: A-2.fa] Segmentation fault (core dumped)
+[n7455:886224] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n7455:886224] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+cat: A-unitigs.fa: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_1/abyss/A_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_1/abyss/B_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+Using Harmonic Mean P-value (HMP) method for merging p-values.
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_1/A_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_1/abyss/A_contigs_pvalues.tsv 
+Warning message:
+In fwrite(hmp_df, OUTPUT_FILE_HMP, sep = "\t", quote = FALSE) :
+  Input has no columns; creating an empty file at '/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_1/abyss/A_contigs_pvalues.tsv' and exiting.
+
+Results saved successfully!
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_1/B_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_1/abyss/B_contigs_pvalues.tsv 
+
+Results saved successfully!
+blast9 flag is true
+-------------Merging kmers using abyss----------------
+snp-0.fa:0: warning: file is empty
+[n7455:886456] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+contigs-0.fa:0: warning: file is empty
+snp-0.fa:0: warning: file is empty
+[n7455:886500] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n7455:886500] PMIX ERROR: NOT-FOUND in file dstore_base.c at line 214
+B-1.fa:0: warning: file is empty
+B-1.fa:0: warning: file is empty
+B-1.fa:0: warning: file is empty
+make: *** [/u/scratch/m/mhuang/claude/scKAR/envs/sckar_tools/bin/abyss-pe.Makefile:568: B-2.fa] Segmentation fault (core dumped)
+cat: B-unitigs.fa: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_2/abyss/A_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_2/abyss/B_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+Using Harmonic Mean P-value (HMP) method for merging p-values.
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_2/A_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_2/abyss/A_contigs_pvalues.tsv 
+
+Results saved successfully!
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_2/B_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_2/abyss/B_contigs_pvalues.tsv 
+Warning message:
+In fwrite(hmp_df, OUTPUT_FILE_HMP, sep = "\t", quote = FALSE) :
+  Input has no columns; creating an empty file at '/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_2/abyss/B_contigs_pvalues.tsv' and exiting.
+
+Results saved successfully!
+blast9 flag is true
+-------------Merging kmers using abyss----------------
+contigs-0.fa:0: warning: file is empty
+snp-0.fa:0: warning: file is empty
+[n7455:886689] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n7455:886689] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+A-1.fa:0: warning: file is empty
+A-1.fa:0: warning: file is empty
+A-1.fa:0: warning: file is empty
+make: *** [/u/scratch/m/mhuang/claude/scKAR/envs/sckar_tools/bin/abyss-pe.Makefile:568: A-2.fa] Segmentation fault (core dumped)
+snp-0.fa:0: warning: file is empty
+[n7455:888428] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n7455:888428] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+cat: A-unitigs.fa: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_3/abyss/A_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_3/abyss/B_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+Using Harmonic Mean P-value (HMP) method for merging p-values.
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_3/A_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_3/abyss/A_contigs_pvalues.tsv 
+Warning message:
+In fwrite(hmp_df, OUTPUT_FILE_HMP, sep = "\t", quote = FALSE) :
+  Input has no columns; creating an empty file at '/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_3/abyss/A_contigs_pvalues.tsv' and exiting.
+
+Results saved successfully!
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_3/B_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_3/abyss/B_contigs_pvalues.tsv 
+
+Results saved successfully!
+blast9 flag is true
+-------------Merging kmers using abyss----------------
+snp-0.fa:0: warning: file is empty
+[n7455:890909] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n7455:890909] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+contigs-0.fa:0: warning: file is empty
+snp-0.fa:0: warning: file is empty
+B-1.fa:0: warning: file is empty
+B-1.fa:0: warning: file is empty
+B-1.fa:0: warning: file is empty
+make: *** [/u/scratch/m/mhuang/claude/scKAR/envs/sckar_tools/bin/abyss-pe.Makefile:568: B-2.fa] Segmentation fault (core dumped)
+cat: B-unitigs.fa: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_4/abyss/A_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_4/abyss/B_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+Using Harmonic Mean P-value (HMP) method for merging p-values.
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_4/A_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_4/abyss/A_contigs_pvalues.tsv 
+
+Results saved successfully!
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_4/B_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_4/abyss/B_contigs_pvalues.tsv 
+Warning message:
+In fwrite(hmp_df, OUTPUT_FILE_HMP, sep = "\t", quote = FALSE) :
+  Input has no columns; creating an empty file at '/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_4/abyss/B_contigs_pvalues.tsv' and exiting.
+
+Results saved successfully!
+[5] exit 0 Mon Nov 16 11:43:18 PST 2026
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/A_kmers.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/A_kmers.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/B_kmers.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/B_kmers.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/abyss/A_contigs.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/abyss/A_contigs.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/abyss/A_contigs_pvalues.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/abyss/B_contigs.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/abyss/B_contigs.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/abyss/B_contigs_pvalues.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_0/filtered_kmers.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_1/A_kmers.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_1/A_kmers.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_1/B_kmers.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_1/B_kmers.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_1/abyss/A_contigs.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_1/abyss/A_contigs.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_1/abyss/A_contigs_pvalues.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_1/abyss/B_contigs.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_1/abyss/B_contigs.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_1/abyss/B_contigs_pvalues.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_1/filtered_kmers.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_2/A_kmers.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_2/A_kmers.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_2/B_kmers.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_2/B_kmers.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_2/abyss/A_contigs.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_2/abyss/A_contigs.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_2/abyss/A_contigs_pvalues.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_percell/data/final_results/bipartition_2/abyss/B_contigs.fasta
+=== done Mon Nov 16 11:43:18 PST 2026 ===
