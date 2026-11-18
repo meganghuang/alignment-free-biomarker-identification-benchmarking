@@ -1,0 +1,13 @@
+--- create_contigs.sh.orig	2026-11-16 23:19:50.345519159 -0800
++++ create_contigs.sh	2026-11-16 23:19:50.354532344 -0800
+@@ -36,8 +36,8 @@
+ 
+ echo "-------------Merging kmers using abyss----------------"
+ >> abyss.log
+-abyss-pe k=27 name=A se=$path/A_kmers.fasta >> abyss.log
+-abyss-pe k=27 name=B se=$path/B_kmers.fasta >> abyss.log
++abyss-pe np=1 k=27 name=A se=$path/A_kmers.fasta >> abyss.log
++abyss-pe np=1 k=27 name=B se=$path/B_kmers.fasta >> abyss.log
+ cat A-unitigs.fa > $path/abyss/A_contigs.fasta
+ rm A-*
+ cat B-unitigs.fa > $path/abyss/B_contigs.fasta

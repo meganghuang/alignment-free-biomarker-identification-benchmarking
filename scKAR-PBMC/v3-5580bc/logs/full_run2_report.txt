@@ -1,0 +1,3006 @@
+=== host n1079 slots 16 start Tue Nov 17 14:38:34 PST 2026 ===
+[1] adjacency already done, skipping
+-rw-r--r--. 1 mhuang matteop 213954602 Nov 17 08:37 adj_5.filtered.csv
+-rw-r--r--. 1 mhuang matteop 212477218 Nov 17 08:37 adj_6.filtered.csv
+-rw-r--r--. 1 mhuang matteop 119889656 Nov 17 08:36 adj_7.filtered.csv
+[2] condition generation (MODE=GENE_EXPRESSION) Tue Nov 17 14:38:34 PST 2026
+[2] trying resolution=0.6
+/u/scratch/m/mhuang/claude/compare3/sckar_full/repo/src/clustering/graph-clustering.py:61: FutureWarning: Argument `save` is deprecated and will be removed in a future version. Use `sc.pl.plot(show=False).figure.savefig()` instead.
+  sc.pl.dendrogram(adata, groupby = clustering_algo, save = '-' + clustering_algo + '.png')
+WARNING: saving figure to file /u/scratch/m/mhuang/claude/compare3/sckar_full/data/clustering_results/figures/dendrogram-leiden.png
+[2] succeeded at resolution=0.6
+[2] exit 0 Tue Nov 17 14:40:03 PST 2026
+clusters:
+   1049 0
+   1027 1
+    104 10
+     17 11
+    722 2
+    603 3
+    514 4
+    419 5
+    418 6
+    294 7
+    292 8
+    121 9
+      1 cluster
+bipartitions:
+10
+[3] F-test Tue Nov 17 14:40:03 PST 2026
+AAACCAAAGGCGCTTG	562951	0
+AAACCAAAGTAGGACG	453647	8
+AAACCATTCCAGCTAA	327877	1
+5580 /u/scratch/m/mhuang/claude/compare3/sckar_full/data//cluster_tpm.csv
+Total cell count: 5580
+Total cluster count: 12
+1049 1027 722 603 514 419 418 294 292 121 104 17 ---Starting Batch---
+Running f test
+Starting Benjamini-Hochberg correction
+Benjamini-Hochberg correction done
+F test done
+Writing to file
+Final flush, buffer size: 103634308
+Writing to file done
+Running f test
+Starting Benjamini-Hochberg correction
+Benjamini-Hochberg correction done
+F test done
+Writing to file
+Final flush, buffer size: 123909302
+Writing to file done
+Running f test
+Starting Benjamini-Hochberg correction
+Benjamini-Hochberg correction done
+F test done
+Writing to file
+Final flush, buffer size: 177669477
+Writing to file done
+Running f test
+Starting Benjamini-Hochberg correction
+Benjamini-Hochberg correction done
+F test done
+Writing to file
+Final flush, buffer size: 204465643
+Writing to file done
+Running f test
+Starting Benjamini-Hochberg correction
+Benjamini-Hochberg correction done
+F test done
+Writing to file
+Final flush, buffer size: 128390877
+Writing to file done
+Running f test
+Starting Benjamini-Hochberg correction
+Benjamini-Hochberg correction done
+F test done
+Writing to file
+Final flush, buffer size: 59556440
+Writing to file done
+Running f test on last chunk
+Starting Benjamini-Hochberg correction
+Benjamini-Hochberg correction done
+F test done
+Writing to file in the last chunk
+[3] exit 0 Tue Nov 17 14:41:23 PST 2026
+f_test chunks:
+7
+761M	/u/scratch/m/mhuang/claude/compare3/sckar_full/data/f_test_results
+[4] DESeq2 Tue Nov 17 14:41:23 PST 2026
+Running DESeq2 for bipartition_0.csv and f_test_result_1.csv
+
+   A    B 
+ 586 4994 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 11439"
+[1] "Number of rows after filtering: 11435"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8070622 431.1   13863327  740.4   9620843  513.9
+Vcells 45894254 350.2  173090601 1320.6 216363125 1650.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv has 11435 rows"
+Running DESeq2 for bipartition_0.csv and f_test_result_2.csv
+
+   A    B 
+ 586 4994 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 13285"
+[1] "Number of rows after filtering: 13285"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8072472 431.2   13863327  740.4   9985069  533.3
+Vcells 51065929 389.7  166312220 1268.9 259860564 1982.6
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv has 13285 rows"
+Running DESeq2 for bipartition_0.csv and f_test_result_3.csv
+
+   A    B 
+ 586 4994 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 16804"
+[1] "Number of rows after filtering: 16799"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8075986 431.4   13863327  740.4   9620843  513.9
+Vcells 61151460 466.6  249427823 1903.0 311782998 2378.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv has 16799 rows"
+Running DESeq2 for bipartition_0.csv and f_test_result_4.csv
+
+   A    B 
+ 586 4994 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 20660"
+[1] "Number of rows after filtering: 20652"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8079839 431.6   13863327  740.4   9620843  513.9
+Vcells 71922521 548.8  239546044 1827.6 374289466 2855.7
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv has 20652 rows"
+Running DESeq2 for bipartition_0.csv and f_test_result_5.csv
+
+   A    B 
+ 586 4994 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 14068"
+[1] "Number of rows after filtering: 14064"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8073232 431.2   13863327  740.4   9828084  524.9
+Vcells 53243623 406.3  238836868 1822.2 298543260 2277.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv has 14064 rows"
+Running DESeq2 for bipartition_0.csv and f_test_result_6.csv
+
+   A    B 
+ 586 4994 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 7293"
+[1] "Number of rows after filtering: 7291"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells  8066478 430.8   13863327 740.4   9620843  513.9
+Vcells 34309702 261.8   96255008 734.4 150396140 1147.5
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv has 7291 rows"
+Running DESeq2 for bipartition_0.csv and f_test_result_7.csv
+
+   A    B 
+ 586 4994 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+Error in read.table(file = file, header = header, sep = sep, quote = quote,  : 
+  no lines available in input
+Calls: read.csv -> read.table
+Execution halted
+merging deseq results
+merging file:  bipartition_0.csv_f_test_result_1.csv_gp.csv
+merging file:  bipartition_0.csv_f_test_result_2.csv_gp.csv
+merging file:  bipartition_0.csv_f_test_result_3.csv_gp.csv
+merging file:  bipartition_0.csv_f_test_result_4.csv_gp.csv
+merging file:  bipartition_0.csv_f_test_result_5.csv_gp.csv
+merging file:  bipartition_0.csv_f_test_result_6.csv_gp.csv
+created filtered_kmers.tsv
+creating fasta files
+created A_kmers.fasta and B_kmers.fasta
+Running DESeq2 for bipartition_1.csv and f_test_result_1.csv
+
+   A    B 
+1467 4113 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 11439"
+[1] "Number of rows after filtering: 11435"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8070622 431.1   13863327  740.4   9620843  513.9
+Vcells 45894254 350.2  173090601 1320.6 216363125 1650.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv has 11435 rows"
+Running DESeq2 for bipartition_1.csv and f_test_result_2.csv
+
+   A    B 
+1467 4113 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 13285"
+[1] "Number of rows after filtering: 13285"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8072472 431.2   13863327  740.4   9985069  533.3
+Vcells 51065929 389.7  166312220 1268.9 259860564 1982.6
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv has 13285 rows"
+Running DESeq2 for bipartition_1.csv and f_test_result_3.csv
+
+   A    B 
+1467 4113 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 16804"
+[1] "Number of rows after filtering: 16799"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8075986 431.4   13863327  740.4   9620843  513.9
+Vcells 61151460 466.6  249427823 1903.0 311782998 2378.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv has 16799 rows"
+Running DESeq2 for bipartition_1.csv and f_test_result_4.csv
+
+   A    B 
+1467 4113 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 20660"
+[1] "Number of rows after filtering: 20652"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8079839 431.6   13863327  740.4   9620843  513.9
+Vcells 71922521 548.8  239546044 1827.6 374289466 2855.7
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv has 20652 rows"
+Running DESeq2 for bipartition_1.csv and f_test_result_5.csv
+
+   A    B 
+1467 4113 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 14068"
+[1] "Number of rows after filtering: 14064"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8073251 431.2   13863327  740.4   9828103  524.9
+Vcells 53243623 406.3  238836868 1822.2 298543260 2277.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv has 14064 rows"
+Running DESeq2 for bipartition_1.csv and f_test_result_6.csv
+
+   A    B 
+1467 4113 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 7293"
+[1] "Number of rows after filtering: 7291"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells  8066478 430.8   13863327 740.4   9620843  513.9
+Vcells 34309702 261.8   96255008 734.4 150396140 1147.5
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv has 7291 rows"
+Running DESeq2 for bipartition_1.csv and f_test_result_7.csv
+
+   A    B 
+1467 4113 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+Error in read.table(file = file, header = header, sep = sep, quote = quote,  : 
+  no lines available in input
+Calls: read.csv -> read.table
+Execution halted
+merging deseq results
+merging file:  bipartition_1.csv_f_test_result_1.csv_gp.csv
+merging file:  bipartition_1.csv_f_test_result_2.csv_gp.csv
+merging file:  bipartition_1.csv_f_test_result_3.csv_gp.csv
+merging file:  bipartition_1.csv_f_test_result_4.csv_gp.csv
+merging file:  bipartition_1.csv_f_test_result_5.csv_gp.csv
+merging file:  bipartition_1.csv_f_test_result_6.csv_gp.csv
+created filtered_kmers.tsv
+creating fasta files
+created A_kmers.fasta and B_kmers.fasta
+Running DESeq2 for bipartition_2.csv and f_test_result_1.csv
+
+   A    B 
+1588 3992 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 11439"
+[1] "Number of rows after filtering: 11435"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8070622 431.1   13863327  740.4   9620843  513.9
+Vcells 45894254 350.2  173090601 1320.6 216363125 1650.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv has 11435 rows"
+Running DESeq2 for bipartition_2.csv and f_test_result_2.csv
+
+   A    B 
+1588 3992 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 13285"
+[1] "Number of rows after filtering: 13285"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8072472 431.2   13863327  740.4   9985069  533.3
+Vcells 51065929 389.7  166312220 1268.9 259860564 1982.6
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv has 13285 rows"
+Running DESeq2 for bipartition_2.csv and f_test_result_3.csv
+
+   A    B 
+1588 3992 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 16804"
+[1] "Number of rows after filtering: 16799"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8075986 431.4   13863327  740.4   9620843  513.9
+Vcells 61151460 466.6  249427823 1903.0 311782998 2378.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv has 16799 rows"
+Running DESeq2 for bipartition_2.csv and f_test_result_4.csv
+
+   A    B 
+1588 3992 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 20660"
+[1] "Number of rows after filtering: 20652"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8079839 431.6   13863327  740.4   9620843  513.9
+Vcells 71922521 548.8  239546044 1827.6 374289466 2855.7
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv has 20652 rows"
+Running DESeq2 for bipartition_2.csv and f_test_result_5.csv
+
+   A    B 
+1588 3992 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 14068"
+[1] "Number of rows after filtering: 14064"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8073230 431.2   13863267  740.4   9828082  524.9
+Vcells 53243623 406.3  238836868 1822.2 298543260 2277.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv has 14064 rows"
+Running DESeq2 for bipartition_2.csv and f_test_result_6.csv
+
+   A    B 
+1588 3992 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 7293"
+[1] "Number of rows after filtering: 7291"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells  8066478 430.8   13863327 740.4   9620843  513.9
+Vcells 34309702 261.8   96255008 734.4 150396140 1147.5
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv has 7291 rows"
+Running DESeq2 for bipartition_2.csv and f_test_result_7.csv
+
+   A    B 
+1588 3992 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+Error in read.table(file = file, header = header, sep = sep, quote = quote,  : 
+  no lines available in input
+Calls: read.csv -> read.table
+Execution halted
+merging deseq results
+merging file:  bipartition_2.csv_f_test_result_1.csv_gp.csv
+merging file:  bipartition_2.csv_f_test_result_2.csv_gp.csv
+merging file:  bipartition_2.csv_f_test_result_3.csv_gp.csv
+merging file:  bipartition_2.csv_f_test_result_4.csv_gp.csv
+merging file:  bipartition_2.csv_f_test_result_5.csv_gp.csv
+merging file:  bipartition_2.csv_f_test_result_6.csv_gp.csv
+created filtered_kmers.tsv
+creating fasta files
+created A_kmers.fasta and B_kmers.fasta
+Running DESeq2 for bipartition_3.csv and f_test_result_1.csv
+
+   A    B 
+1236 4344 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 11439"
+[1] "Number of rows after filtering: 11435"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8070622 431.1   13863327  740.4   9620843  513.9
+Vcells 45894254 350.2  173090601 1320.6 216363125 1650.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv has 11435 rows"
+Running DESeq2 for bipartition_3.csv and f_test_result_2.csv
+
+   A    B 
+1236 4344 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 13285"
+[1] "Number of rows after filtering: 13285"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8072472 431.2   13863327  740.4   9985069  533.3
+Vcells 51065929 389.7  166312220 1268.9 259860564 1982.6
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv has 13285 rows"
+Running DESeq2 for bipartition_3.csv and f_test_result_3.csv
+
+   A    B 
+1236 4344 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 16804"
+[1] "Number of rows after filtering: 16799"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8075986 431.4   13863327  740.4   9620843  513.9
+Vcells 61151460 466.6  249427823 1903.0 311782998 2378.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv has 16799 rows"
+Running DESeq2 for bipartition_3.csv and f_test_result_4.csv
+
+   A    B 
+1236 4344 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 20660"
+[1] "Number of rows after filtering: 20652"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8079839 431.6   13863327  740.4   9620843  513.9
+Vcells 71922521 548.8  239546044 1827.6 374289466 2855.7
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv has 20652 rows"
+Running DESeq2 for bipartition_3.csv and f_test_result_5.csv
+
+   A    B 
+1236 4344 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 14068"
+[1] "Number of rows after filtering: 14064"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8073251 431.2   13863327  740.4   9828103  524.9
+Vcells 53243623 406.3  238836868 1822.2 298543260 2277.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv has 14064 rows"
+Running DESeq2 for bipartition_3.csv and f_test_result_6.csv
+
+   A    B 
+1236 4344 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 7293"
+[1] "Number of rows after filtering: 7291"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells  8066478 430.8   13863327 740.4   9620843  513.9
+Vcells 34309702 261.8   96255008 734.4 150396140 1147.5
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv has 7291 rows"
+Running DESeq2 for bipartition_3.csv and f_test_result_7.csv
+
+   A    B 
+1236 4344 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+Error in read.table(file = file, header = header, sep = sep, quote = quote,  : 
+  no lines available in input
+Calls: read.csv -> read.table
+Execution halted
+merging deseq results
+merging file:  bipartition_3.csv_f_test_result_1.csv_gp.csv
+merging file:  bipartition_3.csv_f_test_result_2.csv_gp.csv
+merging file:  bipartition_3.csv_f_test_result_3.csv_gp.csv
+merging file:  bipartition_3.csv_f_test_result_4.csv_gp.csv
+merging file:  bipartition_3.csv_f_test_result_5.csv_gp.csv
+merging file:  bipartition_3.csv_f_test_result_6.csv_gp.csv
+created filtered_kmers.tsv
+creating fasta files
+created A_kmers.fasta and B_kmers.fasta
+Running DESeq2 for bipartition_4.csv and f_test_result_1.csv
+
+   A    B 
+ 690 4890 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 11439"
+[1] "Number of rows after filtering: 11435"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8070622 431.1   13863327  740.4   9620843  513.9
+Vcells 45894254 350.2  173090601 1320.6 216363125 1650.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv has 11435 rows"
+Running DESeq2 for bipartition_4.csv and f_test_result_2.csv
+
+   A    B 
+ 690 4890 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 13285"
+[1] "Number of rows after filtering: 13285"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8072472 431.2   13863327  740.4   9985069  533.3
+Vcells 51065929 389.7  166312220 1268.9 259860564 1982.6
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv has 13285 rows"
+Running DESeq2 for bipartition_4.csv and f_test_result_3.csv
+
+   A    B 
+ 690 4890 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 16804"
+[1] "Number of rows after filtering: 16799"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8075986 431.4   13863327  740.4   9620843  513.9
+Vcells 61151460 466.6  249427823 1903.0 311782998 2378.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv has 16799 rows"
+Running DESeq2 for bipartition_4.csv and f_test_result_4.csv
+
+   A    B 
+ 690 4890 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 20660"
+[1] "Number of rows after filtering: 20652"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8079839 431.6   13863327  740.4   9620843  513.9
+Vcells 71922521 548.8  239546044 1827.6 374289466 2855.7
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv has 20652 rows"
+Running DESeq2 for bipartition_4.csv and f_test_result_5.csv
+
+   A    B 
+ 690 4890 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 14068"
+[1] "Number of rows after filtering: 14064"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8073251 431.2   13863327  740.4   9828103  524.9
+Vcells 53243623 406.3  238836868 1822.2 298543260 2277.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv has 14064 rows"
+Running DESeq2 for bipartition_4.csv and f_test_result_6.csv
+
+   A    B 
+ 690 4890 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 7293"
+[1] "Number of rows after filtering: 7291"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells  8066478 430.8   13863327 740.4   9620843  513.9
+Vcells 34309702 261.8   96255008 734.4 150396140 1147.5
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv has 7291 rows"
+Running DESeq2 for bipartition_4.csv and f_test_result_7.csv
+
+   A    B 
+ 690 4890 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+Error in read.table(file = file, header = header, sep = sep, quote = quote,  : 
+  no lines available in input
+Calls: read.csv -> read.table
+Execution halted
+merging deseq results
+merging file:  bipartition_4.csv_f_test_result_1.csv_gp.csv
+merging file:  bipartition_4.csv_f_test_result_2.csv_gp.csv
+merging file:  bipartition_4.csv_f_test_result_3.csv_gp.csv
+merging file:  bipartition_4.csv_f_test_result_4.csv_gp.csv
+merging file:  bipartition_4.csv_f_test_result_5.csv_gp.csv
+merging file:  bipartition_4.csv_f_test_result_6.csv_gp.csv
+created filtered_kmers.tsv
+creating fasta files
+created A_kmers.fasta and B_kmers.fasta
+Running DESeq2 for bipartition_5.csv and f_test_result_1.csv
+
+   A    B 
+2263 3317 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 11439"
+[1] "Number of rows after filtering: 11435"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8070622 431.1   13863327  740.4   9620843  513.9
+Vcells 45894254 350.2  173090601 1320.6 216363125 1650.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv has 11435 rows"
+Running DESeq2 for bipartition_5.csv and f_test_result_2.csv
+
+   A    B 
+2263 3317 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 13285"
+[1] "Number of rows after filtering: 13285"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8072472 431.2   13863327  740.4   9985069  533.3
+Vcells 51065929 389.7  166312220 1268.9 259860564 1982.6
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv has 13285 rows"
+Running DESeq2 for bipartition_5.csv and f_test_result_3.csv
+
+   A    B 
+2263 3317 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 16804"
+[1] "Number of rows after filtering: 16799"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8075986 431.4   13863327  740.4   9620843  513.9
+Vcells 61151460 466.6  249427823 1903.0 311782998 2378.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv has 16799 rows"
+Running DESeq2 for bipartition_5.csv and f_test_result_4.csv
+
+   A    B 
+2263 3317 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 20660"
+[1] "Number of rows after filtering: 20652"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8079839 431.6   13863327  740.4   9620843  513.9
+Vcells 71922521 548.8  239546044 1827.6 374289466 2855.7
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv has 20652 rows"
+Running DESeq2 for bipartition_5.csv and f_test_result_5.csv
+
+   A    B 
+2263 3317 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 14068"
+[1] "Number of rows after filtering: 14064"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8073251 431.2   13863327  740.4   9828103  524.9
+Vcells 53243623 406.3  238836868 1822.2 298543260 2277.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv has 14064 rows"
+Running DESeq2 for bipartition_5.csv and f_test_result_6.csv
+
+   A    B 
+2263 3317 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 7293"
+[1] "Number of rows after filtering: 7291"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells  8066478 430.8   13863327 740.4   9620843  513.9
+Vcells 34309702 261.8   96255008 734.4 150396140 1147.5
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv has 7291 rows"
+Running DESeq2 for bipartition_5.csv and f_test_result_7.csv
+
+   A    B 
+2263 3317 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+Error in read.table(file = file, header = header, sep = sep, quote = quote,  : 
+  no lines available in input
+Calls: read.csv -> read.table
+Execution halted
+merging deseq results
+merging file:  bipartition_5.csv_f_test_result_1.csv_gp.csv
+merging file:  bipartition_5.csv_f_test_result_2.csv_gp.csv
+merging file:  bipartition_5.csv_f_test_result_3.csv_gp.csv
+merging file:  bipartition_5.csv_f_test_result_4.csv_gp.csv
+merging file:  bipartition_5.csv_f_test_result_5.csv_gp.csv
+merging file:  bipartition_5.csv_f_test_result_6.csv_gp.csv
+created filtered_kmers.tsv
+creating fasta files
+created A_kmers.fasta and B_kmers.fasta
+Running DESeq2 for bipartition_6.csv and f_test_result_1.csv
+
+   A    B 
+2953 2627 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 11439"
+[1] "Number of rows after filtering: 11435"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8070622 431.1   13863327  740.4   9620843  513.9
+Vcells 45894254 350.2  173090601 1320.6 216363125 1650.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv has 11435 rows"
+Running DESeq2 for bipartition_6.csv and f_test_result_2.csv
+
+   A    B 
+2953 2627 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 13285"
+[1] "Number of rows after filtering: 13285"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8072472 431.2   13863327  740.4   9985069  533.3
+Vcells 51065929 389.7  166312220 1268.9 259860564 1982.6
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv has 13285 rows"
+Running DESeq2 for bipartition_6.csv and f_test_result_3.csv
+
+   A    B 
+2953 2627 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 16804"
+[1] "Number of rows after filtering: 16799"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8075986 431.4   13863327  740.4   9620843  513.9
+Vcells 61151460 466.6  249427823 1903.0 311782998 2378.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv has 16799 rows"
+Running DESeq2 for bipartition_6.csv and f_test_result_4.csv
+
+   A    B 
+2953 2627 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 20660"
+[1] "Number of rows after filtering: 20652"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8079839 431.6   13863327  740.4   9620843  513.9
+Vcells 71922521 548.8  239546044 1827.6 374289466 2855.7
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv has 20652 rows"
+Running DESeq2 for bipartition_6.csv and f_test_result_5.csv
+
+   A    B 
+2953 2627 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 14068"
+[1] "Number of rows after filtering: 14064"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8073251 431.2   13863327  740.4   9828103  524.9
+Vcells 53243623 406.3  238836868 1822.2 298543260 2277.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv has 14064 rows"
+Running DESeq2 for bipartition_6.csv and f_test_result_6.csv
+
+   A    B 
+2953 2627 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 7293"
+[1] "Number of rows after filtering: 7291"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells  8066478 430.8   13863327 740.4   9620843  513.9
+Vcells 34309702 261.8   96255008 734.4 150396140 1147.5
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv has 7291 rows"
+Running DESeq2 for bipartition_6.csv and f_test_result_7.csv
+
+   A    B 
+2953 2627 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+Error in read.table(file = file, header = header, sep = sep, quote = quote,  : 
+  no lines available in input
+Calls: read.csv -> read.table
+Execution halted
+merging deseq results
+merging file:  bipartition_6.csv_f_test_result_1.csv_gp.csv
+merging file:  bipartition_6.csv_f_test_result_2.csv_gp.csv
+merging file:  bipartition_6.csv_f_test_result_3.csv_gp.csv
+merging file:  bipartition_6.csv_f_test_result_4.csv_gp.csv
+merging file:  bipartition_6.csv_f_test_result_5.csv_gp.csv
+merging file:  bipartition_6.csv_f_test_result_6.csv_gp.csv
+created filtered_kmers.tsv
+creating fasta files
+created A_kmers.fasta and B_kmers.fasta
+Running DESeq2 for bipartition_7.csv and f_test_result_1.csv
+
+   A    B 
+1022 4558 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 11439"
+[1] "Number of rows after filtering: 11435"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8070622 431.1   13863327  740.4   9620843  513.9
+Vcells 45894254 350.2  173090601 1320.6 216363125 1650.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv has 11435 rows"
+Running DESeq2 for bipartition_7.csv and f_test_result_2.csv
+
+   A    B 
+1022 4558 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 13285"
+[1] "Number of rows after filtering: 13285"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8072472 431.2   13863327  740.4   9985069  533.3
+Vcells 51065929 389.7  166312220 1268.9 259860564 1982.6
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv has 13285 rows"
+Running DESeq2 for bipartition_7.csv and f_test_result_3.csv
+
+   A    B 
+1022 4558 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 16804"
+[1] "Number of rows after filtering: 16799"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8075986 431.4   13863327  740.4   9620843  513.9
+Vcells 61151460 466.6  249427823 1903.0 311782998 2378.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv has 16799 rows"
+Running DESeq2 for bipartition_7.csv and f_test_result_4.csv
+
+   A    B 
+1022 4558 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 20660"
+[1] "Number of rows after filtering: 20652"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8079839 431.6   13863327  740.4   9620843  513.9
+Vcells 71922521 548.8  239546044 1827.6 374289466 2855.7
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv has 20652 rows"
+Running DESeq2 for bipartition_7.csv and f_test_result_5.csv
+
+   A    B 
+1022 4558 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 14068"
+[1] "Number of rows after filtering: 14064"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8073251 431.2   13863327  740.4   9828103  524.9
+Vcells 53243623 406.3  238836868 1822.2 298543260 2277.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv has 14064 rows"
+Running DESeq2 for bipartition_7.csv and f_test_result_6.csv
+
+   A    B 
+1022 4558 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 7293"
+[1] "Number of rows after filtering: 7291"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells  8066478 430.8   13863327 740.4   9620843  513.9
+Vcells 34309702 261.8   96255008 734.4 150396140 1147.5
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv has 7291 rows"
+Running DESeq2 for bipartition_7.csv and f_test_result_7.csv
+
+   A    B 
+1022 4558 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+Error in read.table(file = file, header = header, sep = sep, quote = quote,  : 
+  no lines available in input
+Calls: read.csv -> read.table
+Execution halted
+merging deseq results
+merging file:  bipartition_7.csv_f_test_result_1.csv_gp.csv
+merging file:  bipartition_7.csv_f_test_result_2.csv_gp.csv
+merging file:  bipartition_7.csv_f_test_result_3.csv_gp.csv
+merging file:  bipartition_7.csv_f_test_result_4.csv_gp.csv
+merging file:  bipartition_7.csv_f_test_result_5.csv_gp.csv
+merging file:  bipartition_7.csv_f_test_result_6.csv_gp.csv
+created filtered_kmers.tsv
+creating fasta files
+created A_kmers.fasta and B_kmers.fasta
+Running DESeq2 for bipartition_8.csv and f_test_result_1.csv
+
+   A    B 
+1605 3975 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 11439"
+[1] "Number of rows after filtering: 11435"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8070622 431.1   13863327  740.4   9620843  513.9
+Vcells 45894254 350.2  173090601 1320.6 216363125 1650.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv has 11435 rows"
+Running DESeq2 for bipartition_8.csv and f_test_result_2.csv
+
+   A    B 
+1605 3975 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 13285"
+[1] "Number of rows after filtering: 13285"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8072472 431.2   13863327  740.4   9985069  533.3
+Vcells 51065929 389.7  166312220 1268.9 259860564 1982.6
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv has 13285 rows"
+Running DESeq2 for bipartition_8.csv and f_test_result_3.csv
+
+   A    B 
+1605 3975 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 16804"
+[1] "Number of rows after filtering: 16799"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8075986 431.4   13863327  740.4   9620843  513.9
+Vcells 61151460 466.6  249427823 1903.0 311782998 2378.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv has 16799 rows"
+Running DESeq2 for bipartition_8.csv and f_test_result_4.csv
+
+   A    B 
+1605 3975 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 20660"
+[1] "Number of rows after filtering: 20652"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8079839 431.6   13863327  740.4   9620843  513.9
+Vcells 71922521 548.8  239546044 1827.6 374289466 2855.7
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv has 20652 rows"
+Running DESeq2 for bipartition_8.csv and f_test_result_5.csv
+
+   A    B 
+1605 3975 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 14068"
+[1] "Number of rows after filtering: 14064"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8073251 431.2   13863327  740.4   9828103  524.9
+Vcells 53243623 406.3  238836868 1822.2 298543260 2277.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv has 14064 rows"
+Running DESeq2 for bipartition_8.csv and f_test_result_6.csv
+
+   A    B 
+1605 3975 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 7293"
+[1] "Number of rows after filtering: 7291"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells  8066478 430.8   13863327 740.4   9620843  513.9
+Vcells 34309702 261.8   96255008 734.4 150396140 1147.5
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv has 7291 rows"
+Running DESeq2 for bipartition_8.csv and f_test_result_7.csv
+
+   A    B 
+1605 3975 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+Error in read.table(file = file, header = header, sep = sep, quote = quote,  : 
+  no lines available in input
+Calls: read.csv -> read.table
+Execution halted
+merging deseq results
+merging file:  bipartition_8.csv_f_test_result_1.csv_gp.csv
+merging file:  bipartition_8.csv_f_test_result_2.csv_gp.csv
+merging file:  bipartition_8.csv_f_test_result_3.csv_gp.csv
+merging file:  bipartition_8.csv_f_test_result_4.csv_gp.csv
+merging file:  bipartition_8.csv_f_test_result_5.csv_gp.csv
+merging file:  bipartition_8.csv_f_test_result_6.csv_gp.csv
+created filtered_kmers.tsv
+creating fasta files
+created A_kmers.fasta and B_kmers.fasta
+Running DESeq2 for bipartition_9.csv and f_test_result_1.csv
+
+   A    B 
+3975 1605 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 11439"
+[1] "Number of rows after filtering: 11435"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8070622 431.1   13863327  740.4   9620843  513.9
+Vcells 45894254 350.2  173090601 1320.6 216363125 1650.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_1.csv has 11435 rows"
+Running DESeq2 for bipartition_9.csv and f_test_result_2.csv
+
+   A    B 
+3975 1605 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 13285"
+[1] "Number of rows after filtering: 13285"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8072472 431.2   13863327  740.4   9985069  533.3
+Vcells 51065929 389.7  166312220 1268.9 259860564 1982.6
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_2.csv has 13285 rows"
+Running DESeq2 for bipartition_9.csv and f_test_result_3.csv
+
+   A    B 
+3975 1605 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 16804"
+[1] "Number of rows after filtering: 16799"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8075982 431.4   13863327  740.4   9620843  513.9
+Vcells 61151460 466.6  249427823 1903.0 311782998 2378.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_3.csv has 16799 rows"
+Running DESeq2 for bipartition_9.csv and f_test_result_4.csv
+
+   A    B 
+3975 1605 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 20660"
+[1] "Number of rows after filtering: 20652"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8079839 431.6   13863327  740.4   9620843  513.9
+Vcells 71922521 548.8  239546044 1827.6 374289466 2855.7
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_4.csv has 20652 rows"
+Running DESeq2 for bipartition_9.csv and f_test_result_5.csv
+
+   A    B 
+3975 1605 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 14068"
+[1] "Number of rows after filtering: 14064"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  8073251 431.2   13863327  740.4   9828103  524.9
+Vcells 53243623 406.3  238836868 1822.2 298543260 2277.8
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_5.csv has 14064 rows"
+Running DESeq2 for bipartition_9.csv and f_test_result_6.csv
+
+   A    B 
+3975 1605 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+[1] "Filtering out lowly expressed genes/kmers"
+[1] "Number of rows before filtering: 7293"
+[1] "Number of rows after filtering: 7291"
+[1] "Number of columns before filtering: 5580"
+[1] "Number of columns after filtering: 5580"
+[1] "Starting DESeq2 analysis for file"
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells  8066478 430.8   13863327 740.4   9620843  513.9
+Vcells 34309702 261.8   96255008 734.4 150396140 1147.5
+[1] "Computing Sum factors (estimateSizeFactors)"
+[1] "Running Deseq2 analysis"
+using pre-existing size factors
+estimating dispersions
+gene-wise dispersion estimates
+using 'glmGamPoi' as fitType. If used in published research, please cite:
+    Ahlmann-Eltze, C., Huber, W. (2020) glmGamPoi: Fitting Gamma-Poisson
+    Generalized Linear Models on Single Cell Count Data. Bioinformatics.
+    https://doi.org/10.1093/bioinformatics/btaa1009
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Fit reduced model
+Calculate quasi likelihood ratio
+Prepare results
+Warning messages:
+1: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+2: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+3: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+4: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+5: useNames = NA is deprecated. Instead, specify either useNames = TRUE or useNames = TRUE. 
+[1] "finish DESeq2 analysis for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "start writing results for file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv"
+[1] "filtered results for file:/u/scratch/m/mhuang/claude/compare3/sckar_full/data//f_test_results//f_test_result_6.csv has 7291 rows"
+Running DESeq2 for bipartition_9.csv and f_test_result_7.csv
+
+   A    B 
+3975 1605 
+[1] "--------------------------------------------"
+[1] "reading count matrix"
+Error in read.table(file = file, header = header, sep = sep, quote = quote,  : 
+  no lines available in input
+Calls: read.csv -> read.table
+Execution halted
+merging deseq results
+merging file:  bipartition_9.csv_f_test_result_1.csv_gp.csv
+merging file:  bipartition_9.csv_f_test_result_2.csv_gp.csv
+merging file:  bipartition_9.csv_f_test_result_3.csv_gp.csv
+merging file:  bipartition_9.csv_f_test_result_4.csv_gp.csv
+merging file:  bipartition_9.csv_f_test_result_5.csv_gp.csv
+merging file:  bipartition_9.csv_f_test_result_6.csv_gp.csv
+created filtered_kmers.tsv
+creating fasta files
+created A_kmers.fasta and B_kmers.fasta
+[4] exit 0 Tue Nov 17 17:34:41 PST 2026
+60
+[5] assembly Tue Nov 17 17:34:42 PST 2026
+blast9 flag is true
+-------------Merging kmers using abyss----------------
+snp-0.fa:0: warning: file is empty
+[n1079:477892] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:477892] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:477944] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:477944] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_0/abyss/A_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_0/abyss/B_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+Using Harmonic Mean P-value (HMP) method for merging p-values.
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_0/A_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_0/abyss/A_contigs_pvalues.tsv 
+
+Results saved successfully!
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_0/B_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_0/abyss/B_contigs_pvalues.tsv 
+
+Results saved successfully!
+blast9 flag is true
+-------------Merging kmers using abyss----------------
+[n1079:478091] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:478091] PMIX ERROR: NOT-FOUND in file dstore_base.c at line 214
+[n1079:478132] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:478132] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:478132] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_1/abyss/A_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_1/abyss/B_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+Using Harmonic Mean P-value (HMP) method for merging p-values.
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_1/A_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_1/abyss/A_contigs_pvalues.tsv 
+
+Results saved successfully!
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_1/B_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_1/abyss/B_contigs_pvalues.tsv 
+
+Results saved successfully!
+blast9 flag is true
+-------------Merging kmers using abyss----------------
+[n1079:478282] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:478282] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:478282] PMIX ERROR: NOT-FOUND in file dstore_base.c at line 214
+[n1079:478282] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:478326] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:478326] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+The minimum coverage of single-end contigs is 2.79167.
+The minimum coverage of merged contigs is 2.79167.
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_2/abyss/A_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_2/abyss/B_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+Using Harmonic Mean P-value (HMP) method for merging p-values.
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_2/A_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_2/abyss/A_contigs_pvalues.tsv 
+
+Results saved successfully!
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_2/B_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_2/abyss/B_contigs_pvalues.tsv 
+
+Results saved successfully!
+blast9 flag is true
+-------------Merging kmers using abyss----------------
+snp-0.fa:0: warning: file is empty
+[n1079:478476] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:478476] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+The minimum coverage of single-end contigs is 3.86207.
+The minimum coverage of merged contigs is 3.91667.
+Consider increasing the coverage threshold parameter, c, to 3.91667.
+[n1079:478518] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:478518] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+The minimum coverage of single-end contigs is 2.
+The minimum coverage of merged contigs is 3.
+Consider increasing the coverage threshold parameter, c, to 3.
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_3/abyss/A_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_3/abyss/B_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+Using Harmonic Mean P-value (HMP) method for merging p-values.
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_3/A_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_3/abyss/A_contigs_pvalues.tsv 
+
+Results saved successfully!
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_3/B_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_3/abyss/B_contigs_pvalues.tsv 
+
+Results saved successfully!
+blast9 flag is true
+-------------Merging kmers using abyss----------------
+contigs-0.fa:0: warning: file is empty
+snp-0.fa:0: warning: file is empty
+[n1079:478664] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:478664] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+A-1.fa:0: warning: file is empty
+A-1.fa:0: warning: file is empty
+A-1.fa:0: warning: file is empty
+make: *** [/u/scratch/m/mhuang/claude/scKAR/envs/sckar_tools/bin/abyss-pe.Makefile:568: A-2.fa] Segmentation fault (core dumped)
+[n1079:478700] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+The minimum coverage of single-end contigs is 2.
+The minimum coverage of merged contigs is 2.
+cat: A-unitigs.fa: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_4/abyss/A_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_4/abyss/B_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+Using Harmonic Mean P-value (HMP) method for merging p-values.
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_4/A_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_4/abyss/A_contigs_pvalues.tsv 
+Warning message:
+In fwrite(hmp_df, OUTPUT_FILE_HMP, sep = "\t", quote = FALSE) :
+  Input has no columns; creating an empty file at '/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_4/abyss/A_contigs_pvalues.tsv' and exiting.
+
+Results saved successfully!
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_4/B_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_4/abyss/B_contigs_pvalues.tsv 
+
+Results saved successfully!
+blast9 flag is true
+-------------Merging kmers using abyss----------------
+snp-0.fa:0: warning: file is empty
+[n1079:478840] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:478840] PMIX ERROR: NOT-FOUND in file dstore_base.c at line 214
+[n1079:478840] PMIX ERROR: NOT-FOUND in file dstore_base.c at line 214
+The minimum coverage of single-end contigs is 2.375.
+The minimum coverage of merged contigs is 2.375.
+[n1079:478882] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+The minimum coverage of single-end contigs is 2.
+The minimum coverage of merged contigs is 3.58824.
+Consider increasing the coverage threshold parameter, c, to 3.58824.
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_5/abyss/A_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_5/abyss/B_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+Using Harmonic Mean P-value (HMP) method for merging p-values.
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_5/A_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_5/abyss/A_contigs_pvalues.tsv 
+
+Results saved successfully!
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_5/B_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_5/abyss/B_contigs_pvalues.tsv 
+
+Results saved successfully!
+blast9 flag is true
+-------------Merging kmers using abyss----------------
+snp-0.fa:0: warning: file is empty
+[n1079:479035] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:479035] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:479079] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:479079] PMIX ERROR: NOT-FOUND in file dstore_base.c at line 214
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_6/abyss/A_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_6/abyss/B_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+Using Harmonic Mean P-value (HMP) method for merging p-values.
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_6/A_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_6/abyss/A_contigs_pvalues.tsv 
+
+Results saved successfully!
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_6/B_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_6/abyss/B_contigs_pvalues.tsv 
+
+Results saved successfully!
+blast9 flag is true
+-------------Merging kmers using abyss----------------
+snp-0.fa:0: warning: file is empty
+[n1079:479244] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:479294] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:479294] PMIX ERROR: NOT-FOUND in file dstore_base.c at line 214
+The minimum coverage of single-end contigs is 2.52381.
+The minimum coverage of merged contigs is 12.
+Consider increasing the coverage threshold parameter, c, to 12.
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_7/abyss/A_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_7/abyss/B_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+Using Harmonic Mean P-value (HMP) method for merging p-values.
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_7/A_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_7/abyss/A_contigs_pvalues.tsv 
+
+Results saved successfully!
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_7/B_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_7/abyss/B_contigs_pvalues.tsv 
+
+Results saved successfully!
+blast9 flag is true
+-------------Merging kmers using abyss----------------
+[n1079:479443] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:479443] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:479443] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:479487] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:479487] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_8/abyss/A_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_8/abyss/B_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+Using Harmonic Mean P-value (HMP) method for merging p-values.
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_8/A_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_8/abyss/A_contigs_pvalues.tsv 
+
+Results saved successfully!
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_8/B_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_8/abyss/B_contigs_pvalues.tsv 
+
+Results saved successfully!
+blast9 flag is true
+-------------Merging kmers using abyss----------------
+[n1079:479648] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+[n1079:479690] PMIX ERROR: NO-PERMISSIONS in file dstore_base.c at line 234
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_9/abyss/A_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+running blat on /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_9/abyss/B_contigs.fasta
+BLAST9 MODE
+/u/home/m/mhuang/userApps/bin/blat: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
+Using Harmonic Mean P-value (HMP) method for merging p-values.
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_9/A_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_9/abyss/A_contigs_pvalues.tsv 
+
+Results saved successfully!
+Loading required package: FMStable
+
+Reading k-mer file: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_9/B_kmers.tsv 
+
+Processing contigs...
+
+Saving HMP results to: /u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_9/abyss/B_contigs_pvalues.tsv 
+
+Results saved successfully!
+[5] exit 0 Tue Nov 17 17:35:39 PST 2026
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_0/A_kmers.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_0/A_kmers.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_0/B_kmers.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_0/B_kmers.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_0/abyss/A_contigs.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_0/abyss/A_contigs.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_0/abyss/A_contigs_pvalues.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_0/abyss/B_contigs.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_0/abyss/B_contigs.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_0/abyss/B_contigs_pvalues.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_0/filtered_kmers.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_1/A_kmers.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_1/A_kmers.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_1/B_kmers.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_1/B_kmers.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_1/abyss/A_contigs.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_1/abyss/A_contigs.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_1/abyss/A_contigs_pvalues.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_1/abyss/B_contigs.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_1/abyss/B_contigs.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_1/abyss/B_contigs_pvalues.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_1/filtered_kmers.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_2/A_kmers.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_2/A_kmers.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_2/B_kmers.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_2/B_kmers.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_2/abyss/A_contigs.fasta
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_2/abyss/A_contigs.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_2/abyss/A_contigs_pvalues.tsv
+/u/scratch/m/mhuang/claude/compare3/sckar_full/data/final_results/bipartition_2/abyss/B_contigs.fasta
+=== done Tue Nov 17 17:35:39 PST 2026 ===
