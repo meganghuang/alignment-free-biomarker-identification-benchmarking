@@ -93,6 +93,14 @@ consequence of its design rather than a bug: the Fisher F-test pre-filter
 already selects k-mers with high between-group variance, so the DE test that
 follows is applied to a set enriched for exactly what it looks for.
 
+*Provenance of the 83,549:* it is the number of 31-mers surviving the Fisher
+F-test, i.e. the input to the DE stage — the row counts of
+`data/f_test_results/f_test_result_1..6.csv` (11,439 + 13,285 + 16,804 + 20,660
++ 14,068 + 7,293). The chunks partition the k-mer space, so the distinct count
+equals the sum (verified: `cut -f1 | sort -u | wc -l` also returns 83,549).
+Every bipartition tests this same set, which is why the per-bipartition
+significant counts must be unioned rather than summed.
+
 ### Distinct vs summed counts
 
 scKAR's per-bipartition tables sum to 451,196 significant k-mers and 3,707
