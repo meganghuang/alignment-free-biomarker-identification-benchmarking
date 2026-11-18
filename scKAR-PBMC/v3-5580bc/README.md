@@ -53,9 +53,9 @@ NK 311 · Dendritic cells 142 · Platelets 17.
   documented an A/B label inversion verified empirically
   (`../v1-pseudocell/logs/ab_direction.txt`); direction should be re-checked
   here before any biological claim is attached to an arm.
-- **Contigs are not annotated.** `blat` on this cluster fails with
-  `libmysqlclient.so.18: cannot open shared object file`, so contig-to-genome
-  mapping and gene assignment were not run.
+- **Most contigs multi-map and few reach a gene** — see *Contig annotation*
+  below. 86.4% of placed contigs hit more than one locus and two-thirds of them
+  land on the rDNA-bearing scaffold `chrUn_GL000220v1`.
 
 ## Why the subset was misleading
 
@@ -68,6 +68,58 @@ sparse at 523 cells for 31-mers to chain into contigs at the 27-mer overlap
 ABySS requires: the differential signal was present, but the assembly step had
 too little overlapping sequence to join. The 24-contig figure is a property of
 the subsample, not of scKAR, and should not be cited as the latter.
+
+## Contig annotation
+
+All 3,707 contigs were mapped to hg38 with BLAT (`-minScore=20`; contigs average
+~51 bp, so the default minimum would discard most of them) and assigned genes by
+interval overlap against GENCODE v41.
+
+![Annotation](results/v3_annotation.png)
+
+| | contigs | |
+|---|---|---|
+| assembled | 3,707 | |
+| placed on hg38 | 3,247 | 87.6% of assembled |
+| map to a single locus | 442 | 13.6% of placed |
+| overlap a GENCODE gene | 855 | 26.3% of placed |
+
+**Two-thirds of placed contigs are rDNA-scaffold sequence.** 2,147 of 3,247
+(66.1%) have their best locus on `chrUn_GL000220v1`, the unplaced scaffold that
+carries the 45S ribosomal DNA repeat array, and **not one of them overlaps an
+annotated gene**. A further 86 land on chrM. Excluding both leaves 1,014 contigs,
+of which 776 overlap a gene — that is the interpretable fraction.
+
+**Multi-mapping is the norm, not the exception.** 86.4% of placed contigs hit
+more than one locus; the median is 6 loci and the maximum 530. Only 442 contigs
+resolve to a single position. Any per-locus claim should be restricted to that
+subset.
+
+Among the 855 annotated contigs, overlaps fall on protein-coding genes (603),
+lncRNA (210), processed pseudogenes (58), mitochondrial rRNA (43) and
+mitochondrial tRNA (9). The most frequently hit features are `ENSG00000280441`
+(100 contigs), `MT-RNR2` (29) and `MT-RNR1` (14).
+
+### How to read this
+
+The dominance of rDNA and mitochondrial sequence has a plausible methodological
+explanation that should be ruled out before it is read as biology. scKAR
+subtracts k-mers found in the *transcriptome* reference; the rDNA repeat array
+on `chrUn_GL000220v1` is poorly represented there, so rRNA-derived k-mers
+survive subtraction and are abundant enough in any cell to pass the prevalence
+floor and the variance filter. The scKAR paper reports elevated rRNA and mtRNA
+as a biological finding in its axolotl dataset; the same signal appearing as the
+dominant output in PBMC is at least consistent with it being partly a property
+of reference subtraction rather than of the tissue.
+
+Testing that would mean re-running the reference filter against a genome-derived
+or rDNA-augmented k-mer set and seeing whether the `chrUn_GL000220v1` fraction
+collapses. That has not been done here.
+
+Annotation outputs are in `results/annotation/`: `contig_annotation.tsv`
+(one row per placed contig with best locus, multi-mapping count and overlapping
+genes), `annotation_summary.tsv` (per bipartition and arm) and the raw
+`all_contigs.psl.gz`.
 
 ## Deviations from scKAR as published
 
@@ -111,11 +163,13 @@ cell's row and corrupts the F-test matrix width. Delete `tpm_sum.csv` and
 ```
 results/de_kmers/    per-bipartition A/B/filtered DE 31-mer tables (gzipped)
 results/contigs/     assembled contigs (FASTA + TSV), empty arms included
-results/v3_summary.png
+results/annotation/  contig_annotation.tsv, annotation_summary.tsv, all_contigs.psl.gz
+results/v3_summary.png, results/v3_annotation.png
 metadata/            cells_full.tsv, cluster.csv, bipartitions/, tpm_sum.csv,
                      cluster_tpm.csv, dedup_counts.tsv (per-cell before/after), config.env
 scripts/             01-demux_lane_buckets.py, 02-split_dedup_bucket.py,
-                     03-make_expression_full.py, 04-run_stages.sh, env.sh
+                     03-make_expression_full.py, 04-run_stages.sh,
+                     05-collect_contigs.py, 06-annotate_contigs.py, env.sh
 patches/             the three diffs above
 logs/                full run reports and per-lane demux logs
 ```

@@ -14,6 +14,8 @@ Run on UCLA Hoffman2 (OARC Slurm cluster), compute nodes.
 | DESeq2 | 1.34.0 |
 | scran | 1.22.1 |
 | glmGamPoi | 1.6.0 |
+| BLAT | v39x1 (UCSC prebuilt, linux.x86_64) |
+| GENCODE annotation | v41 (`gencode.v41.annotation.gtf`, 61,852 genes) |
 
 Conda environments (`/u/scratch/m/mhuang/claude/scKAR/envs/`): `sckar_py`,
 `sckar_r`, `sckar_tools`. No `module load` is needed on compute nodes; system
@@ -34,3 +36,16 @@ Reference for k-mer subtraction: GENCODE v50 transcriptome 31-mers,
 
 Slurm jobs route by account only (`--account=pi_mcdb`, no `--partition`), which
 lands on `pi_shared` with `qos=pi_shared24` and a 24-hour walltime ceiling.
+
+## BLAT note
+
+The pre-existing `~/userApps/bin/blat` is a CentOS 7 build and does not run on
+Rocky 9 — it is missing `libmysqlclient.so.18`, `libssl.so.10`,
+`libcrypto.so.10` and `libpng15.so.15`, none of which this OS provides. It was
+replaced with UCSC's current prebuilt binary
+(`hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/blat/blat`), which links only
+against libc and libm.
+
+BLAT must run in a job, not on a login node: the 4 GB login cgroup cap makes it
+fail with `needLargeMem: Out of memory`. Mapping all 3,707 contigs against hg38
+took 1 m 18 s on one core with 48 GB.
