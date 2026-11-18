@@ -1,0 +1,6 @@
+partition_A,partition_B,ARI,NMI
+standard (cluster),k-mer (cluster),0.5562,0.6042
+standard (cluster),scKAR (cluster),0.8005,0.8459
+k-mer (cluster),scKAR (cluster),0.5451,0.6185
+standard (cell type),scKAR (cluster),0.4302,0.6923
+standard (cell type),k-mer (cell type),0.481,0.5996

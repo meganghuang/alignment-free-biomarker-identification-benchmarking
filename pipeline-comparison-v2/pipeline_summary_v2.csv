@@ -1,0 +1,11 @@
+property,standard,kmer,sckar
+Feature,genes,28-mers,31-mers
+Unit analysed,"5,580 cells","5,531 cells","5,580 cells"
+Counting,CellRanger (UMI-collapsed),BKC (UMI-aware),jellyfish + UMI collapse (our addition)
+Primary filter,QC only,"prevalence, >=1% of cells",reference subtraction (GENCODE v50)
+Clustering input,gene expression,k-mer counts,gene expression (not k-mers)
+Clusters,15 (res 0.4),8 (res 0.2),12 (res 0.6)
+DE design,one-vs-rest per cluster,one-vs-rest per cluster,"9 distinct bipartitions, glmGamPoi"
+Significant features (distinct),"13,941 genes","89,970 k-mers","75,179 k-mers"
+Contigs (distinct),—,"4,162","1,838"
+Cell types assigned,6,7 (2 are artifact classes),none

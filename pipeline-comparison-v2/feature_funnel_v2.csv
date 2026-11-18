@@ -1,0 +1,6 @@
+stage,Standard (genes),k-mer pipeline (28-mers),scKAR (31-mers)
+Tested for DE,29567.0,474583.0,83549
+Significant (distinct),13941.0,89970.0,75179
+Assembled contigs (distinct),,4162.0,1838
+Placed on hg38,,2430.0,1596
+Overlap a GENCODE gene,,,550
