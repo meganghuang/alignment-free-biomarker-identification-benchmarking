@@ -1,0 +1,8 @@
+partition,reference,ARI,NMI
+scKAR v3 (gene-expr clustering),standard cell type,0.4302,0.6923
+scKAR v4 (k-mer clustering),standard cell type,0.0277,0.0836
+scKAR v3,standard cluster,0.8005,0.8459
+scKAR v4,standard cluster,0.0495,0.124
+k-mer pipeline,standard cluster,0.5562,0.6042
+scKAR v4,scKAR v3,0.0516,0.13
+scKAR v4,k-mer pipeline,0.0605,0.1471

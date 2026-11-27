@@ -1,0 +1,7 @@
+stage,standard_genes,kmer_28mers,sckar_v3_31mers,sckar_v4_31mers
+Tested for DE,29567.0,474583.0,83549,
+Significant (distinct),13941.0,89970.0,75179,13949.0
+Contigs (distinct),,4162.0,1838,161.0
+Placed on hg38,,2430.0,1596,172.0
+On rDNA scaffold,,,911,137.0
+Overlap a gene,,,550,30.0

@@ -1,0 +1,14 @@
+property,standard,kmer_pipeline,sckar_v3,sckar_v4
+Feature,genes,28-mers,31-mers,31-mers
+Cells,"5,580","5,531","5,580","5,580"
+Counting,CellRanger (UMI-collapsed),BKC (UMI-aware),jellyfish + UMI collapse,jellyfish + UMI collapse
+Primary filter,QC only,prevalence >=1% of cells,reference subtraction,reference subtraction
+Clustering input,gene expression,k-mer counts,gene expression,scKAR's own k-mers
+Clusters,15 (res 0.4),8 (res 0.2),12 (res 0.6),15 (res 0.6)
+DE design,one-vs-rest,one-vs-rest,"9 bipartitions, glmGamPoi","13 bipartitions, glmGamPoi"
+Significant features (distinct),"13,941 genes","89,970 k-mers","75,179 k-mers","13,949 k-mers"
+Contigs (distinct),—,"4,162","1,838",161
+Placed on hg38,—,"2,430","1,596",172
+On rDNA scaffold,—,not assessed,911 (57.1%),137 (79.7%)
+Cell types assigned,6,7 (2 artifact),none,none
+ARI vs standard clustering,1.000 (self),0.556,0.800*,0.050
