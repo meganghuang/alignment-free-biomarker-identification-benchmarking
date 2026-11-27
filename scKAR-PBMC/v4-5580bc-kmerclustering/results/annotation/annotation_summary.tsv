@@ -1,0 +1,17 @@
+bipartition	arm	placed	unique_locus	annotated
+bip0	A	2	0	2
+bip1	A	5	0	0
+bip1	B	2	1	2
+bip10	B	11	0	0
+bip11	B	2	0	0
+bip12	A	2	0	0
+bip3	A	7	0	1
+bip4	A	2	0	0
+bip4	B	5	0	0
+bip5	A	1	0	0
+bip5	B	20	0	1
+bip6	A	11	0	3
+bip6	B	19	0	1
+bip7	A	4	0	0
+bip7	B	46	5	15
+bip9	A	33	0	5

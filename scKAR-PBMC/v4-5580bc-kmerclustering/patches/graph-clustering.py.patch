@@ -1,0 +1,15 @@
+--- graph-clustering.py.orig	2026-11-24 14:28:52.801895734 -0800
++++ graph-clustering.py	2026-11-24 14:28:52.810971306 -0800
+@@ -99,8 +99,10 @@
+     temp = cluster_df.copy()
+     temp = temp.reset_index()
+ 
+-    temp['cluster'] = temp['cluster'].replace(list(str(bipartite_sets[i][0])), 'A')
+-    temp['cluster'] = temp['cluster'].replace(list(str(bipartite_sets[i][1])), 'B')
++    set_a = {str(x) for x in bipartite_sets[i][0]}
++    set_b = {str(x) for x in bipartite_sets[i][1]}
++    temp['cluster'] = temp['cluster'].astype(str).apply(
++        lambda x: 'A' if x in set_a else ('B' if x in set_b else x))
+     temp.columns = ['cell', 'condition']
+ 
+     temp.sort_values(by=['cell'], inplace=True)

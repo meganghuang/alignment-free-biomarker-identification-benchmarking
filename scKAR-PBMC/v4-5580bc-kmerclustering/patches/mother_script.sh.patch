@@ -1,0 +1,20 @@
+--- mother_script.sh.orig	2026-11-24 14:28:52.887569782 -0800
++++ mother_script.sh	2026-11-24 14:28:52.891461736 -0800
+@@ -63,7 +63,7 @@
+ echo "creating adjacency list"
+ start=`date +%s`
+ 
+-g++ -O2 -std=c++17 -pthread -static-libstdc++ -static-libgcc create_adj_list.cpp -o create_adj_list -lstdc++fs
++g++ -O2 -std=c++17 -pthread create_adj_list.cpp -o create_adj_list
+ ./create_adj_list $dataset_path
+ 
+ end=`date +%s`
+@@ -74,7 +74,7 @@
+ 	echo "filtering references"
+ 	start=`date +%s`
+ 
+-	g++ -O2 -std=c++17 -pthread -static-libstdc++ -static-libgcc ref_filter.cpp -o ref_filter -lstdc++fs
++	g++ -O2 -std=c++17 -pthread ref_filter.cpp -o ref_filter
+ 	./ref_filter $dataset_path $ref_transcriptome_file $num_threads
+ 	end=`date +%s`
+ 
